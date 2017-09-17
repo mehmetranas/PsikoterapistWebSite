@@ -1,31 +1,254 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<!-- ============================
+SLIDER
+============================ -->
+    
+<div class="jumbotron  jumbotron--with-captions">
+    <div class="carousel  slide  fade" id="headerCarousel" data-ride="carousel" data-interval="5000">
+        <div class="carousel-inner">
+            <div class="item"> <img src="../../content/assests/images/image-24-425x200.jpg" srcset="../../content/assests/images/image-24-425x200.jpg 425w, ../../content/assests/images/image-24-850x400.jpg 850w" sizes="(min-width: 768px) 720px, (min-width: 992px) 700px, (min-width: 1200px) 850px, calc(100vw-20px)" alt="&quot;Be smart, help yourself now.&quot;">
+                <div class="jumbotron-content">
+                    <h1 class="jumbotron-content__title">"Be smart, help yourself now."</h1>
+                    <div class="jumbotron-content__description">
+                        <p><i>–</i>&nbsp;Mahatma Gandhi</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item active"> <img src="../../content/assests/images/image-6-425x200.jpg" srcset="../../content/assests/images/image-6-425x200.jpg 425w, ../../content/assests/images/image-6-850x400.jpg 850w" sizes="(min-width: 768px) 720px, (min-width: 992px) 700px, (min-width: 1200px) 850px, calc(100vw-20px)" alt="&quot;Mental illness is no myth.&quot;">
+                <div class="jumbotron-content">
+                    <h1 class="jumbotron-content__title">"Mental illness is no myth."</h1>
+                    <div class="jumbotron-content__description">
+                        <p><i>–</i>&nbsp;Nelson Mandela</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item"> <img src="../../content/assests/images/image-8-425x200.jpg" srcset="../../content/assests/images/image-8-425x200.jpg 425w, ../../content/assests/images/image-8-850x400.jpg 850w" sizes="(min-width: 768px) 720px, (min-width: 992px) 700px, (min-width: 1200px) 850px, calc(100vw-20px)" alt="&quot;Life is too short to wait&quot;">
+                <div class="jumbotron-content">
+                    <h1 class="jumbotron-content__title">"Life is too short to wait"</h1>
+                    <div class="jumbotron-content__description">
+                        <p><i>–</i>&nbsp;Unknown Girl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left  jumbotron__control" href="#headerCarousel" role="button" data-slide="prev"> <i class="fa  fa-chevron-left"></i> </a>
+        <a class="right  jumbotron__control" href="#headerCarousel" role="button" data-slide="next"> <i class="fa  fa-chevron-right"></i> </a>
+    </div>
 </div>
+ 
+<!-- ========  // SLIDER ======== -->
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+<!-- ============================
+CONTENT
+============================ -->
+
+<div class="content-container">
+
+    <article>
+        <div class="panel-grid row">
+            <div class="col-md-6 panel-grid-cell">
+                <div class="so-panel panel-first-child panel-last-child">
+                    <h3 class="widget-title">Welcome to my Practice</h3>
+                    <div class="textwidget">
+                        <p>As a psychologist and a cognitive behavioral therapist I have worked with hundreds of patients and understand the intricacies of various psychological issues that people face.</p>
+                        <p>My work revolves around being friendly, disciplined and organized yet flexible. I approach my patients and help them resolve their emotional issues of the past and the present, to open the door to a brighter and confident future.</p>
+                        <p><a class="read-more" href="about.html">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="so-panel panel-first-child widget_featured_page">
+                    <div class="page-box  page-box--inline">
+                        <a class="page-box__picture" href="depression-treatment.html"><img width="100" height="70" src="../../content/assests/images/image-16-100x70.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Depression Treatment"></a>
+                        <div class="page-box__content">
+                            <h5 class="page-box__title  text-uppercase"><a href="depression-treatment.html">Depression Treatment</a></h5>
+                            <p>Depression is a mental illness, which one should not confuse …</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="so-panel widget_featured_page">
+                    <div class="page-box  page-box--inline">
+                        <a class="page-box__picture" href="services/individual-treatment/"><img width="100" height="70" src="../../content/assests/images/image-27-100x70.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Individual Treatment"></a>
+                        <div class="page-box__content">
+                            <h5 class="page-box__title  text-uppercase"><a href="services/individual-treatment/">Individual Treatment</a></h5>
+                            <p>Individual treatment is often termed as psychotherapy, and is …</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="so-panel panel-last-child widget_featured_page">
+                    <div class="page-box  page-box--inline">
+                        <a class="page-box__picture" href="anxiety-treatment.html"><img width="100" height="70" src="../../content/assests/images/image-1-100x70.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Anxiety Treatment"></a>
+                        <div class="page-box__content">
+                            <h5 class="page-box__title  text-uppercase"><a href="anxiety-treatment.html">Anxiety Treatment</a></h5>
+                            <p>Whether it is social phobia, specific phobia, post traumatic …</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================
+        HIGHLIGHT LINK
+        ============================ -->
+
+        <div class="panel-grid row m-b-lg">
+            <div class="col-md-6">
+                <div class="so-panel widget widget_pw_banner widget-banner panel-first-child panel-last-child" id="panel-6-1-0-0">
+                    <a class="banner" href="http://frequently-asked-questions" target="_self">
+                        <div class="banner__title"> Privacy Policy</div>
+                        <div class="banner__content"> Between Doctors and Patients</div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="so-panel widget widget_pw_banner widget-banner panel-first-child panel-last-child" id="panel-6-1-1-0">
+                    <a class="banner" href="http://shop" target="_self">
+                        <div class="banner__title"> Book Recommendations</div>
+                        <div class="banner__content"> Couple of Books We Recommend You</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========  // END HIGHLIGHT LINK ======== -->
+
+        <!-- ============================
+        SERVICES OVERVIEW
+        ============================ -->
+
+        <div class="panel-grid row">
+            <div class="col-md-4">
+                <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-0-0">
+                    <div class="page-box  page-box--block">
+                        <a class="page-box__picture" href="couples-therapy.html"><img width="360" height="240" src="../../content/assests/images/image-21-360x240.jpg" class="attachment-page-box size-page-box wp-post-image" alt="Couples Therapy"></a>
+                        <div class="page-box__content">
+                            <h5 class="page-box__title  text-uppercase"><a href="couples-therapy.html">Couples Therapy</a></h5>
+                            <p>A relationship goes through numerous phases during its life cycle, and it is obvious for it to have a few rough patches. However, the strength of a relationship is reflected in how the couples deal with those ...</p>
+                            <p>
+                                <a href="couples-therapy.html" class="read-more  read-more--page-box">Read more</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-1-0">
+                    <div class="page-box  page-box--block">
+                        <a class="page-box__picture" href="post-divorce-recovery.html"><img width="360" height="240" src="../../content/assests/images/image-35-360x240.jpg" class="attachment-page-box size-page-box wp-post-image" alt="Post-divorce Recovery"></a>
+                        <div class="page-box__content">
+                            <h5 class="page-box__title  text-uppercase"><a href="post-divorce-recovery.html">Post-divorce Recovery</a></h5>
+                            <p>Our systematic approach towards couple therapy is defined on the lines of enhancing the communication between the partners, and establishing short term and long term goals, where both the partners would be...</p>
+                            <p><a href="post-divorce-recovery.html" class="read-more  read-more--page-box">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-2-0">
+                    <div class="page-box  page-box--block">
+                        <a class="page-box__picture" href="children-therapy.html"><img width="360" height="240" src="../../content/assests/images/image-54-360x240.jpg" class="attachment-page-box size-page-box wp-post-image" alt="Therapy for Children"></a>
+                        <div class="page-box__content">
+                            <h5 class="page-box__title  text-uppercase"><a href="children-therapy.html">Therapy for Children</a></h5>
+                            <p>There are many emotional issues that find a corner in our heart, and refuse to die down. With time, these issues can transform into a sort of emotional tumor that impacts negatively on our daily life, such as lack of...</p>
+                            <p><a href="children-therapy.html" class="read-more  read-more--page-box">Read more</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========  // END SERVICES OVERVIEW ======== -->
+
+        <!-- ============================
+        TESTIMONIALs
+        ============================ -->
+
+        <div class="panel-grid row m-b-lg">
+            <div class="panel-row-style">
+                <div class="col-md-12">
+                    <div class="so-panel widget widget-testimonials panel-first-child panel-last-child">
+                        <div class="testimonial grey-wrap">
+                            <h2 class="widget-title">Testimonials</h2>
+                            <div class="carousel slide" data-ride="carousel" data-interval="false">
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <div class="row">
+                                            <div class="col-xs-12  col-sm-12">
+                                                <blockquote>
+                                                    <p class="testimonial__quote"> We've had a lot of financial troubles over the years; loss of physical health, job and bankruptcy. Laura's coaching gave us hope and a new sense of vision so we can create our lives together.</p>
+                                                    <cite class="testimonial__author"> Anastacia Rockafeller</cite>
+                                                    <div class="testimonial__author-description"> Mother of two.</div>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========  // END TESTIMONIALS ======== -->
+
+        <!-- ============================
+        FAQ SECTION
+        ============================ -->
+
+        <!-- FAQ TITLE -->
+        <div class="panel-grid row m-b">
+            <div class="col-md-12">
+                <div class="so-panel widget panel-first-child panel-last-child" id="panel-6-4-0-0">
+                    <div class="text-center panel-widget-style">
+                        <h3 class="widget-title">Frequently Asked Questions</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // end FAQ TITLE -->
+        <div class="panel-grid row m-b-0">
+            <div class="col-md-4">
+                <div class="so-panel widget widget_black_studio_tinymce panel-first-child panel-last-child" id="panel-6-5-0-0">
+                    <div class="textwidget">
+                        <p><strong>What can I expect in the first session when I see a therapist?</strong></p>
+                        <p>Aliquam erat volutpat. Morbi volutpat velit ac sem vulputate sollicitudin. Aliquam tincidunt finibus leo, eget suscipit augue eleifend in.</p>
+                        <p><a class="read-more" href="faq.html">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="so-panel widget widget_black_studio_tinymce panel-first-child panel-last-child" id="panel-6-5-1-0">
+                    <div class="textwidget">
+                        <p><strong>What are the signs of being abused by partner?</strong></p>
+                        <p>Morbi volutpat velit ac sem vulputate sollicitudin. Aliquam tincidunt finibus leo, eget suscipit augue eleifend in.&nbsp;Aliquam erat volutpat.</p>
+                        <p><a class="read-more" href="faq.html">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="so-panel widget widget_black_studio_tinymce panel-first-child panel-last-child" id="panel-6-5-2-0">
+                    <div class="textwidget">
+                        <p><strong>What can I expect in the first session when I see a therapist?</strong></p>
+                        <p>Aliquam erat volutpat. Morbi volutpat velit ac sem vulputate sollicitudin. Aliquam tincidunt finibus leo, eget suscipit augue eleifend in.</p>
+                        <p><a class="read-more" href="faq.html">Read more</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========  // END FAQ SECTION ======== -->
+
+    </article>
+
 </div>
+<!-- // end .content-container -->
+
+<!-- ========  // END CONTENT ======== -->
+
