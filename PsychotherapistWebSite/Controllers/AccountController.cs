@@ -49,11 +49,6 @@ namespace PsychotherapistWebSite.Controllers
             }
         }
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -165,7 +160,7 @@ namespace PsychotherapistWebSite.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Account");
+                    return RedirectToAction("Index", "Admin");
                 }
                 AddErrors(result);
             }
@@ -451,7 +446,7 @@ namespace PsychotherapistWebSite.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Admin");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

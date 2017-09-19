@@ -2,9 +2,10 @@
 
 namespace PsychotherapistWebSite.Controllers
 {
-    public class HomeController : Controller
+    [Authorize]
+    public class AdminController : Controller
     {
-        // GET: Home
+        // GET: Admin
         public ActionResult Index()
         {
             return View();
