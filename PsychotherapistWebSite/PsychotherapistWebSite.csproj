@@ -224,6 +224,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\User\AdminAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
+    <Compile Include="Areas\User\Controllers\SlideController.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\AdminController.cs" />
@@ -232,6 +233,7 @@
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
+    <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -276,6 +278,14 @@
     <Compile Include="Migrations\201709200755362_ChangeServiceContentLength.Designer.cs">
       <DependentUpon>201709200755362_ChangeServiceContentLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709211206410_AddedSlideTable.cs" />
+    <Compile Include="Migrations\201709211206410_AddedSlideTable.Designer.cs">
+      <DependentUpon>201709211206410_AddedSlideTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709211234472_AddedMottoTable.cs" />
+    <Compile Include="Migrations\201709211234472_AddedMottoTable.Designer.cs">
+      <DependentUpon>201709211234472_AddedMottoTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -289,7 +299,10 @@
     <Compile Include="Core\Models\ManageViewModels.cs" />
     <Compile Include="Core\Models\Service.cs" />
     <Compile Include="Core\Models\Verification.cs" />
+    <Compile Include="Models\Motto.cs" />
+    <Compile Include="Models\Slide.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
+    <Compile Include="Persistance\Repositories\SlideRepository.cs" />
     <Compile Include="Persistance\Repositories\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -905,6 +918,7 @@
     <Content Include="fonts\fonts-awesome\fontawesome-webfont.woff" />
     <Content Include="fonts\fonts-awesome\fontawesome-webfont.woff2" />
     <Content Include="fonts\fonts-awesome\FontAwesome.otf" />
+    <Content Include="Areas\User\Views\Slide\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1004,6 +1018,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709200755362_ChangeServiceContentLength.resx">
       <DependentUpon>201709200755362_ChangeServiceContentLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709211206410_AddedSlideTable.resx">
+      <DependentUpon>201709211206410_AddedSlideTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709211234472_AddedMottoTable.resx">
+      <DependentUpon>201709211234472_AddedMottoTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

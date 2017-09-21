@@ -14,6 +14,9 @@ namespace PsychotherapistWebSite.Models
         public DbSet<Verification> Verifications { get; set; }
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Slide> Slides { get; set; }
+        public DbSet<Motto> Mottoes { get; set; }
+        
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
