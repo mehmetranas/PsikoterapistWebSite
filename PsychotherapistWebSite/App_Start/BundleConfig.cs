@@ -27,11 +27,27 @@ namespace PsychotherapistWebSite
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/lib/scripts")
+                .Include("~/Scripts/bootbox.min.js"));
+
+            bundles.Add(new ScriptBundle("~/admin/scripts")
+                .Include("~/Scripts/App/app.js",
+                "~/Scripts/App/Controller/ServiceController.js",
+                "~/Scripts/App/Service/ServiceService.js"));
+
+            bundles.Add(new StyleBundle("~/Content/css")
+                .Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/assests/css")
                 .Include("~/Content/Assests/css/style.css"));
+
+            bundles.Add(new StyleBundle("~/lib/css")
+                .Include("~/Content/animate.css",
+                "~/Content/font-awesome.css"));
+
+            bundles.Add(new StyleBundle("~/bootstrap/css")
+                .Include("~/Content/bootstrap.css"));
+
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Models
 {

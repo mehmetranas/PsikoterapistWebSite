@@ -1,0 +1,45 @@
+﻿@model IEnumerable<PsychotherapistWebSite.Core.Models.Service>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h3>ALan Adları</h3>
+<hr />
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Alan Adı
+        </th>
+       <th></th>
+    </tr>
+
+@foreach (var service in Model) {
+    <tr id="@service.Id">
+        <td>
+            @Html.DisplayFor(modelItem => service.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=service.Id }) |
+            <button type="button" class="btn-link js-service-delete" id = "@service.Id">Sil</button>
+        </td>
+    </tr>
+}
+
+</table>
+
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            animate();
+            ServiceController.deleteService();
+        });
+    </script>
+}

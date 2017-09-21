@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using PsychotherapistWebSite.Models;
+using PsychotherapistWebSite.Core.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -54,6 +54,8 @@ namespace PsychotherapistWebSite.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
+           // if(User.Identity.IsAuthenticated) return RedirectToAction("Index", "Admin", new { Area = "User" });
+
             ViewBag.ReturnUrl = "loginLink";
             return View();
         }
@@ -160,7 +162,7 @@ namespace PsychotherapistWebSite.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Admin", new {Area = "User"});
                 }
                 AddErrors(result);
             }
@@ -446,7 +448,7 @@ namespace PsychotherapistWebSite.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Index", "Admin", new {Area = "User"});
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

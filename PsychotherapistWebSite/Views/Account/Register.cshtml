@@ -1,9 +1,11 @@
-﻿@model PsychotherapistWebSite.Models.RegisterViewModel
+﻿@model PsychotherapistWebSite.Core.Models.RegisterViewModel
 @{
     ViewBag.Title = "Register";
+    Layout = "../Shared/_LayoutLogin.cshtml";
 }
 
 <h2>@ViewBag.Title.</h2>
+@Html.ActionLink("Admin Panel","Index","Admin",null,new {area="User"})
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", id="login", role = "form" }))
 {

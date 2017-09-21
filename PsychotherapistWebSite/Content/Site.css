@@ -14,11 +14,7 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
+
 
 /*Admin Panel*/
 
@@ -32,4 +28,18 @@ textarea {
 
 #admin-home-menu .btn {
     text-align: center
+}
+
+.admin-sidebar {
+    margin-right: 60px;
+    max-width: 200px;
+    border-right: solid rgb(207, 202, 202) 1px
+}
+
+.list-service {
+    list-style-type: none;
+}
+
+ul.list-service a {
+    text-align: right
 }
