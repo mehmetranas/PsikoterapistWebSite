@@ -9,7 +9,7 @@ namespace PsychotherapistWebSite.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(PsychotherapistWebSite.Models.ApplicationDbContext context)

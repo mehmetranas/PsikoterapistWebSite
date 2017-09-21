@@ -45,20 +45,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC5.3.2.1.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.2.1.0\lib\net45-full\Ninject.Web.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -102,6 +129,9 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -187,44 +217,85 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\MappingProfile.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\User\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\ServiceController.cs" />
+    <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Areas\User\Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
+    <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Repositories\IServiceRepository.cs" />
+    <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709170338197_AddedAdressAndInfoTable.cs" />
-    <Compile Include="Migrations\201709170338197_AddedAdressAndInfoTable.Designer.cs">
-      <DependentUpon>201709170338197_AddedAdressAndInfoTable.cs</DependentUpon>
+    <Compile Include="Migrations\201709191557266_Initial.cs" />
+    <Compile Include="Migrations\201709191557266_Initial.Designer.cs">
+      <DependentUpon>201709191557266_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709170404208_AddedBlog-Category-CommentsTable.cs" />
-    <Compile Include="Migrations\201709170404208_AddedBlog-Category-CommentsTable.Designer.cs">
-      <DependentUpon>201709170404208_AddedBlog-Category-CommentsTable.cs</DependentUpon>
+    <Compile Include="Migrations\201709191601100_AddedServiceTable.cs" />
+    <Compile Include="Migrations\201709191601100_AddedServiceTable.Designer.cs">
+      <DependentUpon>201709191601100_AddedServiceTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709170410163_AddedFAQ-Verification-ServicesTables.cs" />
-    <Compile Include="Migrations\201709170410163_AddedFAQ-Verification-ServicesTables.Designer.cs">
-      <DependentUpon>201709170410163_AddedFAQ-Verification-ServicesTables.cs</DependentUpon>
+    <Compile Include="Migrations\201709191602042_AddedFAQTable.cs" />
+    <Compile Include="Migrations\201709191602042_AddedFAQTable.Designer.cs">
+      <DependentUpon>201709191602042_AddedFAQTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191602568_AddedVertificationTable.cs" />
+    <Compile Include="Migrations\201709191602568_AddedVertificationTable.Designer.cs">
+      <DependentUpon>201709191602568_AddedVertificationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191603429_AddedCommentTable.cs" />
+    <Compile Include="Migrations\201709191603429_AddedCommentTable.Designer.cs">
+      <DependentUpon>201709191603429_AddedCommentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191604591_AddedCategoryTable.cs" />
+    <Compile Include="Migrations\201709191604591_AddedCategoryTable.Designer.cs">
+      <DependentUpon>201709191604591_AddedCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191605412_AddedBlogTable.cs" />
+    <Compile Include="Migrations\201709191605412_AddedBlogTable.Designer.cs">
+      <DependentUpon>201709191605412_AddedBlogTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709191607221_AddedAdressTable.cs" />
+    <Compile Include="Migrations\201709191607221_AddedAdressTable.Designer.cs">
+      <DependentUpon>201709191607221_AddedAdressTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709192055245_ChangeServiceRequiredment.cs" />
+    <Compile Include="Migrations\201709192055245_ChangeServiceRequiredment.Designer.cs">
+      <DependentUpon>201709192055245_ChangeServiceRequiredment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709200755362_ChangeServiceContentLength.cs" />
+    <Compile Include="Migrations\201709200755362_ChangeServiceContentLength.Designer.cs">
+      <DependentUpon>201709200755362_ChangeServiceContentLength.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Adress.cs" />
+    <Compile Include="Core\Models\AccountViewModels.cs" />
+    <Compile Include="Core\Models\Adress.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\Blog.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\FAQ.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Info.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Service.cs" />
-    <Compile Include="Models\Verification.cs" />
+    <Compile Include="Core\Models\Blog.cs" />
+    <Compile Include="Core\Models\Category.cs" />
+    <Compile Include="Core\Models\Comment.cs" />
+    <Compile Include="Core\Models\FAQ.cs" />
+    <Compile Include="Core\Models\IdentityModels.cs" />
+    <Compile Include="Core\Models\Info.cs" />
+    <Compile Include="Core\Models\ManageViewModels.cs" />
+    <Compile Include="Core\Models\Service.cs" />
+    <Compile Include="Core\Models\Verification.cs" />
+    <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
+    <Compile Include="Persistance\Repositories\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.css" />
     <Content Include="Content\Assests\images\404.png" />
     <Content Include="Content\Assests\images\avatar1.jpeg" />
     <Content Include="Content\Assests\images\avatar2.jpeg" />
@@ -353,8 +424,6 @@
     <Content Include="Content\Assests\images\widget-title-logo.png" />
     <Content Include="Content\Assests\images\woocommerce_logo.png" />
     <Content Include="Content\Assests\images\woocommerce_logo.svg" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Assests\css\magnific-popup.css" />
     <Content Include="Content\Assests\css\rtl.css" />
     <Content Include="Content\Assests\css\style.css" />
@@ -365,15 +434,23 @@
     <Content Include="Content\Assests\css\themes\purple.css" />
     <Content Include="Content\Assests\css\themes\red.css" />
     <Content Include="Content\Assests\css\woocommerce.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\Assests\fontawesome-webfont.svg" />
     <Content Include="fonts\Assests\star.svg" />
     <Content Include="fonts\Assests\WooCommerce.svg" />
+    <Content Include="fonts\fonts-awesome\fontawesome-webfont.svg" />
     <Content Include="html\assets\sass\fontawesome\css\font-awesome.css" />
     <Content Include="html\assets\sass\fontawesome\css\font-awesome.min.css" />
     <Content Include="html\assets\sass\fontawesome\css\mixins.css" />
     <Content Include="html\assets\sass\fontawesome\css\variables.css" />
     <Content Include="html\assets\sass\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
+    <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\Controller\ServiceController.js" />
+    <Content Include="Scripts\App\Service\ServiceService.js" />
     <Content Include="Scripts\Assests\appointment.js" />
     <Content Include="Scripts\Assests\contact_form.js" />
     <Content Include="Scripts\Assests\google-map.js" />
@@ -565,8 +642,7 @@
     <Content Include="html\shop-single.html" />
     <Content Include="html\shop.html" />
     <Content Include="html\shortcodes.html" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootbox.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -820,7 +896,18 @@
     <Content Include="html\assets\sass\style.scss" />
     <Content Include="Content\Assests\images\brochure.pdf" />
     <Content Include="Content\Assests\images\star.eot" />
+    <Content Include="Areas\User\Views\web.config" />
+    <Content Include="Areas\User\Views\Admin\Index.cshtml" />
+    <Content Include="Areas\User\Views\Service\Index.cshtml" />
+    <Content Include="Areas\User\Views\Service\Create.cshtml" />
+    <Content Include="fonts\fonts-awesome\fontawesome-webfont.eot" />
+    <Content Include="fonts\fonts-awesome\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fonts-awesome\fontawesome-webfont.woff" />
+    <Content Include="fonts\fonts-awesome\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fonts-awesome\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -862,13 +949,15 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_LayoutLanding.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Areas\User\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Web API\" />
+    <Folder Include="Core\ViewModels\" />
+    <Folder Include="Persistance\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -886,14 +975,35 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709170338197_AddedAdressAndInfoTable.resx">
-      <DependentUpon>201709170338197_AddedAdressAndInfoTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709191557266_Initial.resx">
+      <DependentUpon>201709191557266_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709170404208_AddedBlog-Category-CommentsTable.resx">
-      <DependentUpon>201709170404208_AddedBlog-Category-CommentsTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709191601100_AddedServiceTable.resx">
+      <DependentUpon>201709191601100_AddedServiceTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709170410163_AddedFAQ-Verification-ServicesTables.resx">
-      <DependentUpon>201709170410163_AddedFAQ-Verification-ServicesTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709191602042_AddedFAQTable.resx">
+      <DependentUpon>201709191602042_AddedFAQTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191602568_AddedVertificationTable.resx">
+      <DependentUpon>201709191602568_AddedVertificationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191603429_AddedCommentTable.resx">
+      <DependentUpon>201709191603429_AddedCommentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191604591_AddedCategoryTable.resx">
+      <DependentUpon>201709191604591_AddedCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191605412_AddedBlogTable.resx">
+      <DependentUpon>201709191605412_AddedBlogTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709191607221_AddedAdressTable.resx">
+      <DependentUpon>201709191607221_AddedAdressTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709192055245_ChangeServiceRequiredment.resx">
+      <DependentUpon>201709192055245_ChangeServiceRequiredment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709200755362_ChangeServiceContentLength.resx">
+      <DependentUpon>201709200755362_ChangeServiceContentLength.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
