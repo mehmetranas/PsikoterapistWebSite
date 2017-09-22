@@ -5,14 +5,15 @@ namespace PsychotherapistWebSite.Models
     public class Motto
     {
         public int Id { get; set; }
-        [Microsoft.Build.Framework.Required]
-        [Display(Name = "Başlık")]
+        [Required]
+        [Display(Name = "Söz Başlığı")]
         public string Title { get; set; }
-        [Microsoft.Build.Framework.Required]
-        [Display(Name = "İçerik")]
+        [Required]
+        [Display(Name = "Söz İçeriği")]
+        [StringLength(250)]
         public string Text { get; set; }
-        [Microsoft.Build.Framework.Required]
-        [Display(Name = "Söyleyen")]
+        [Required]
+        [Display(Name = "Sözü Söyleyen")]
         public string Teller { get; set; }
     }
 }

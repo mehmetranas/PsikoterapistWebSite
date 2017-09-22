@@ -1,4 +1,5 @@
-﻿using PsychotherapistWebSite.Core.Repositories;
+﻿using System;
+using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
@@ -9,12 +10,14 @@ namespace PsychotherapistWebSite.Persistance.Repositories
 
         public IServiceRepository Service { get; }
         public ISlideRepsitory Slide { get; }
+        public IMottoRepository Motto { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
             Service = new ServiceRepository(_context);
             Slide = new SlideRepository(_context);
+            Motto = new MottoRepository(_context);
         }
 
         public void Complete()

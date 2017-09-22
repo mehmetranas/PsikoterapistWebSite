@@ -6,12 +6,15 @@ using System.Web;
 
 namespace PsychotherapistWebSite.Models
 {
-    public class Slide
+    public class Image
     {
+        [Microsoft.Build.Framework.Required]
         public int Id { get; set; }
+        [Microsoft.Build.Framework.Required]
+        [StringLength(80)]
+        public string Name { get; set; }
         [Required]
-        public Image Image { get; set; }
-        [Display(Name = "Özlü Söz")]
-        public Motto Motto { get; set; }
+        public string Url { get; set; }
+
     }
 }

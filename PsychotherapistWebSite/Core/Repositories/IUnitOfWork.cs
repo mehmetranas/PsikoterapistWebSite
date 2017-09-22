@@ -2,9 +2,10 @@
 {
     public interface IUnitOfWork
     {
-         IServiceRepository Service { get; }
-         ISlideRepsitory Slide { get; }   
+        IServiceRepository Service { get; }
+        ISlideRepsitory Slide { get; }
+        IMottoRepository Motto { get; }
 
-        void Complete();    
+        void Complete();
     }
 }

@@ -16,6 +16,7 @@ namespace PsychotherapistWebSite.Models
         public DbSet<Service> Services { get; set; }
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Motto> Mottoes { get; set; }
+        public DbSet<Image> Images{ get; set; }
         
 
         public ApplicationDbContext()
