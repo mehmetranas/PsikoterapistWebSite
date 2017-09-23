@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace PsychotherapistWebSite.Core.Repositories
 {
-    public interface ISlideRepsitory
+    public interface IImageRepository
     {
-        IEnumerable<Slide> GetSlides();
-        Slide GetSlide(int id);
+        IEnumerable<Image> GetImages();
         void Delete(int id);
-        void Add(Slide slide);
+        Image GetImage(int? id);
+        void Add(Image image);
     }
 }

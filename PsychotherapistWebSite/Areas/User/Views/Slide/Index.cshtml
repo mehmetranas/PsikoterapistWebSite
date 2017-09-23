@@ -11,12 +11,18 @@
     @Html.ActionLink("Yeni Slayt", "Create")
 </p>
 <p>
-    @Html.ActionLink("Yeni Resim Yazısı", "Index","Motto")
+    @Html.ActionLink("Resim Yazıları", "Index","Motto")
+</p>
+<p>
+    @Html.ActionLink("Resimler", "Index","Images")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            #
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Motto.Title)
@@ -24,10 +30,16 @@
         <th></th>
     </tr>
 
-@foreach (var slide in Model) {
+@{int i = 0;}
+@foreach (var slide in Model)
+{
+    i++;
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => slide.Title)
+            @i
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => slide.Image.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => slide.Motto.Title)
@@ -37,5 +49,6 @@
             @Html.ActionLink("Delete", "Delete", new { id=slide.Id })
         </td>
     </tr>
+   
 } 
 </table>

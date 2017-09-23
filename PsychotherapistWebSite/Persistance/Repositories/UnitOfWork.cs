@@ -11,6 +11,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         public IServiceRepository Service { get; }
         public ISlideRepsitory Slide { get; }
         public IMottoRepository Motto { get; }
+        public IImageRepository Image { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -18,11 +19,17 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             Service = new ServiceRepository(_context);
             Slide = new SlideRepository(_context);
             Motto = new MottoRepository(_context);
+            Image = new ImageRepository(_context);
         }
 
         public void Complete()
         {
            _context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _context.Dispose();
         }
     }
 }

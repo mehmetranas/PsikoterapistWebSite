@@ -10,5 +10,7 @@ namespace PsychotherapistWebSite.Core.ViewModels
     {
         public Slide Slide { get; set; }
         public IEnumerable<Motto> Mottoes { get; set; }
+        public IEnumerable<Image> Images { get; set; }
+        public string ActionType { get; internal set; }
     }
 }

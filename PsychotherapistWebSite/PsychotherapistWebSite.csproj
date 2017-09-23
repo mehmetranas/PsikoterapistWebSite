@@ -223,6 +223,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\User\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\ImagesController.cs" />
     <Compile Include="Areas\User\Controllers\MottoController.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
@@ -233,10 +234,12 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
+    <Compile Include="Core\ViewModels\ImageViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -301,6 +304,18 @@
     <Compile Include="Migrations\201709220433550_ChangeSlideTableAfterAddedImageTable.Designer.cs">
       <DependentUpon>201709220433550_ChangeSlideTableAfterAddedImageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709230855181_FixedImageClassDataannotation.cs" />
+    <Compile Include="Migrations\201709230855181_FixedImageClassDataannotation.Designer.cs">
+      <DependentUpon>201709230855181_FixedImageClassDataannotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709230914103_FixedImageClassDataannotation2.cs" />
+    <Compile Include="Migrations\201709230914103_FixedImageClassDataannotation2.Designer.cs">
+      <DependentUpon>201709230914103_FixedImageClassDataannotation2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709231829248_ChangeForeignKeyNameAtSlideTable.cs" />
+    <Compile Include="Migrations\201709231829248_ChangeForeignKeyNameAtSlideTable.Designer.cs">
+      <DependentUpon>201709231829248_ChangeForeignKeyNameAtSlideTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -317,6 +332,7 @@
     <Compile Include="Models\Image.cs" />
     <Compile Include="Models\Motto.cs" />
     <Compile Include="Models\Slide.cs" />
+    <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
     <Compile Include="Persistance\Repositories\SlideRepository.cs" />
@@ -939,6 +955,14 @@
     <Content Include="Areas\User\Views\Slide\Create.cshtml" />
     <Content Include="Areas\User\Views\Motto\Index.cshtml" />
     <Content Include="Areas\User\Views\Motto\Create.cshtml" />
+    <Content Include="Areas\User\Views\Images\Create.cshtml" />
+    <Content Include="Areas\User\Views\Images\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Images\Details.cshtml" />
+    <Content Include="Areas\User\Views\Images\Index.cshtml" />
+    <Content Include="Areas\User\Views\Motto\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Motto\Edit.cshtml" />
+    <Content Include="Areas\User\Views\Slide\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Slide\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -990,6 +1014,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Web API\" />
+    <Folder Include="Images\Slide\" />
     <Folder Include="Persistance\Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -1052,6 +1077,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709220433550_ChangeSlideTableAfterAddedImageTable.resx">
       <DependentUpon>201709220433550_ChangeSlideTableAfterAddedImageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709230855181_FixedImageClassDataannotation.resx">
+      <DependentUpon>201709230855181_FixedImageClassDataannotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709230914103_FixedImageClassDataannotation2.resx">
+      <DependentUpon>201709230914103_FixedImageClassDataannotation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709231829248_ChangeForeignKeyNameAtSlideTable.resx">
+      <DependentUpon>201709231829248_ChangeForeignKeyNameAtSlideTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

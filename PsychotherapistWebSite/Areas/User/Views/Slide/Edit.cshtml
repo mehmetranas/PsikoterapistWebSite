@@ -1,32 +1,33 @@
 ﻿@model PsychotherapistWebSite.Core.ViewModels.SlideViewModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
     Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Düzenleme Sayfası</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Slide</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Slide.Id)
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Slide.Image.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Slide.Image, "ImageId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(m => m.Slide.ImageId, new SelectList(Model.Images, "Id", "Name"), "Seç", new { @class = "form-control" })
+                @Html.DropDownListFor(m => m.Slide.ImageId ,new SelectList(Model.Images,"Id","Name"),"Seç",new {@class = "form-control"})
                 @Html.ValidationMessageFor(model => model.Slide.ImageId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Slide.Motto.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Slide.Motto, "MottoId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(m => m.Slide.MottoId,new SelectList(Model.Mottoes,"Id","Title"),"Seç", new {@class="form-control"})
+                @Html.DropDownListFor(m => m.Slide.MottoId ,new SelectList(Model.Mottoes,"Id","Title"),"Seç",new {@class = "form-control"})
                 @Html.ValidationMessageFor(model => model.Slide.MottoId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -40,5 +41,5 @@
 }
 
 <div>
-    @Html.ActionLink("Geri", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>

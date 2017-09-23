@@ -23,7 +23,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         {
             ViewBag.Title = "Yeni Alan Ekle";
             ViewBag.Action = ActionType.Save;
-            return View("Create", null);
+            return View();
         }
 
         public ActionResult Edit(int id)

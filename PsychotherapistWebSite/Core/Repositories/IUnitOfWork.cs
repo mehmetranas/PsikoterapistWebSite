@@ -5,7 +5,9 @@
         IServiceRepository Service { get; }
         ISlideRepsitory Slide { get; }
         IMottoRepository Motto { get; }
+        IImageRepository Image { get; }
 
         void Complete();
+        void Dispose();
     }
 }

@@ -28,5 +28,15 @@ namespace PsychotherapistWebSite.Models
         {
             return new ApplicationDbContext();
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Slide>()
+                .HasRequired(s => s.Image);
+            modelBuilder.Entity<Slide>()
+                .HasRequired(s => s.Motto);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

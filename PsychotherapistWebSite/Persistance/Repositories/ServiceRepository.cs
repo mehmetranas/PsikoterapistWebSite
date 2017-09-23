@@ -3,6 +3,7 @@ using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
 {
@@ -30,8 +31,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         {
             var serviceDb = _context.Services.FirstOrDefault(s => s.Id == service.Id);
             if (serviceDb == null) return;
-            serviceDb.Name = service.Name;
-            serviceDb.Content = service.Content;
+            Mapper.Map(service,serviceDb);
         }
 
         public IEnumerable<Service> GetServices()

@@ -8,12 +8,11 @@ namespace PsychotherapistWebSite.Models
 {
     public class Image
     {
-        [Microsoft.Build.Framework.Required]
         public int Id { get; set; }
-        [Microsoft.Build.Framework.Required]
-        [StringLength(80)]
-        public string Name { get; set; }
         [Required]
+        [StringLength(80)]
+        [Display(Name = "Resim Adı")]
+        public string Name { get; set; }
         public string Url { get; set; }
 
     }

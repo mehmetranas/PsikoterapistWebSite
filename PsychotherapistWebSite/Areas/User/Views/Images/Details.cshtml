@@ -1,0 +1,32 @@
+﻿@model PsychotherapistWebSite.Models.Image
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+            </dl>
+
+        </div>
+        <div class="col-md-4">
+            <img src="~/Images/Slide/@Model.Url" class="img-responsive img-thumbnail" alt="@Model.Name" />
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Geri", "Index")
+</p>

@@ -9,7 +9,8 @@ namespace PsychotherapistWebSite.Core.Repositories
     public interface IMottoRepository
     {
         IEnumerable<Motto> GetMottoes();
+        Motto GetMotto(int? id);
         void Add(Motto motto);
-        void Remove(int id);
+        void Delete(int? id);
     }
 }

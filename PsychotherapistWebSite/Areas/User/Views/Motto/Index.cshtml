@@ -24,25 +24,29 @@
         <th></th>
     </tr>
 
-@foreach (var motto in Model)
-{
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => motto.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => motto.Text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => motto.Teller)
-        </td>
-        <td>
-            @Html.ActionLink("Düzenle", "Edit", new { id = motto.Id })
-        </td>
-        <td>
-            @Html.ActionLink("Sil", "Delete", new { id = motto.Id })
-        </td>
-    </tr>
-}
+    @foreach (var motto in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => motto.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => motto.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => motto.Teller)
+            </td>
+            <td>
+                @Html.ActionLink("Düzenle", "Edit", new { id = motto.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Sil", "Delete", new { id = motto.Id })
+            </td>
+        </tr>
+    }
 
 </table>
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Slide")
+</div>

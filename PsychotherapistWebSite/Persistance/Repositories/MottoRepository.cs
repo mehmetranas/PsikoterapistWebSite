@@ -25,7 +25,13 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             return _context.Mottoes.ToList();
         }
 
-        public void Remove(int id)
+        public Motto GetMotto(int? id)
+        {
+            var motto = _context.Mottoes.SingleOrDefault(m => m.Id == id);
+            return motto;
+        }
+
+        public void Delete(int? id)
         {
             var motto = _context.Mottoes.SingleOrDefault(m => m.Id == id);
             if (motto == null) return;
