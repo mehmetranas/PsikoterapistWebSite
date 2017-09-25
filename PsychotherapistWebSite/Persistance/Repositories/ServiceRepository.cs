@@ -2,6 +2,7 @@
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using AutoMapper;
 
@@ -36,13 +37,16 @@ namespace PsychotherapistWebSite.Persistance.Repositories
 
         public IEnumerable<Service> GetServices()
         {
-            var services = _context.Services.ToList();
+            var services = _context.Services
+                .Include(s => s.Images)
+                .ToList();
             return services;
         }
 
         public Service GetService(int id)
         {
-            var service = _context.Services.SingleOrDefault(s => s.Id == id);
+            var service = _context.Services
+                .SingleOrDefault(s => s.Id == id);
             return service ?? null;
         }
 

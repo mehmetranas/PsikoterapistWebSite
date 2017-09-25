@@ -239,6 +239,7 @@
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
+    <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -316,6 +317,10 @@
     <Compile Include="Migrations\201709231829248_ChangeForeignKeyNameAtSlideTable.Designer.cs">
       <DependentUpon>201709231829248_ChangeForeignKeyNameAtSlideTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709241242206_AddedImagesProıpertyToTheServiceClass.cs" />
+    <Compile Include="Migrations\201709241242206_AddedImagesProıpertyToTheServiceClass.Designer.cs">
+      <DependentUpon>201709241242206_AddedImagesProıpertyToTheServiceClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -339,6 +344,7 @@
     <Compile Include="Persistance\Repositories\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Core\ViewModels\ServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
@@ -494,6 +500,9 @@
     <Content Include="html\assets\sass\fontawesome\css\variables.css" />
     <Content Include="html\assets\sass\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
+    <Content Include="Images\Slide\70e79684-d5eb-4ef7-9c38-4e46498f71e2.jpg" />
+    <Content Include="Images\Slide\7ae30aa7-1e5a-4b2b-b57a-ef3fddac7bc7.jpg" />
+    <Content Include="Images\Slide\cbd37847-9016-4724-8af0-19a27166433f.jpg" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
@@ -1014,7 +1023,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Web API\" />
-    <Folder Include="Images\Slide\" />
     <Folder Include="Persistance\Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -1086,6 +1094,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709231829248_ChangeForeignKeyNameAtSlideTable.resx">
       <DependentUpon>201709231829248_ChangeForeignKeyNameAtSlideTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709241242206_AddedImagesProıpertyToTheServiceClass.resx">
+      <DependentUpon>201709241242206_AddedImagesProıpertyToTheServiceClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,6 +13,11 @@
     white-space: normal;
 }
 
+/*Override Mental Template*/
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    max-height: 400px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 
 

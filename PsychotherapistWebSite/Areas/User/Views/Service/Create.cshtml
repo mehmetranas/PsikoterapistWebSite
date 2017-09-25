@@ -1,4 +1,4 @@
-﻿@model PsychotherapistWebSite.Core.Models.Service
+﻿@model PsychotherapistWebSite.Core.ViewModels.ServiceViewModel
 
 @{
     Layout        = "../Shared/_LayoutAdmin.cshtml";
@@ -18,6 +18,14 @@
                     @Html.LabelFor(m => m.Content)
                     @Html.TextAreaFor(m => m.Content, new {@class = "form-control", rows = "12", required = true, placeholder = "Açıklma"})
                     <span class="small text-muted js-counter">1000</span>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Image1.Name)
+                    @Html.DropDownListFor(m => m.Image1.Id, new SelectList(Model.Images, "Id", "Name"), "Seç", new {@class = "form-control js-image1"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Image2.Name)
+                    @Html.DropDownListFor(m => m.Image2.Id, new SelectList(Model.Images, "Id", "Name"), "Seç", new {@class = "form-control js-image2"})
                 </div>
             </form>
 
