@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PsychotherapistWebSite.Core.Dtos;
 using PsychotherapistWebSite.Core.Models;
+using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.App_Start
 {
@@ -10,6 +11,8 @@ namespace PsychotherapistWebSite.App_Start
         {
             CreateMap<Service, ServiceDto>();
             CreateMap<ServiceDto, Service>();
+            CreateMap<Motto, Motto>();
+            CreateMap<Service, Service>();
         }
     }
 }

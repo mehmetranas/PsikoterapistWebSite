@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PsychotherapistWebSite.Core.Repositories
+﻿namespace PsychotherapistWebSite.Core.Repositories
 {
     public interface IUnitOfWork
     {
-         IServiceRepository Service { get; }
+        IServiceRepository Service { get; }
+        ISlideRepsitory Slide { get; }
+        IMottoRepository Motto { get; }
+        IImageRepository Image { get; }
 
-        void Complete();    
+        void Complete();
+        void Dispose();
     }
 }

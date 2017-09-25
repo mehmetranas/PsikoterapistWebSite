@@ -16,6 +16,7 @@
         <th>
             Alan Adı
         </th>
+       <th>İlişkilendirilmiş Resim Sayısı </th>
        <th></th>
     </tr>
 
@@ -23,6 +24,9 @@
     <tr id="@service.Id">
         <td>
             @Html.DisplayFor(modelItem => service.Name)
+        </td>
+        <td>
+            @service.Images.Count()
         </td>
         <td>
             @Html.ActionLink("Düzenle", "Edit", new { id=service.Id }) |

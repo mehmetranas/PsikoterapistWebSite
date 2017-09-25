@@ -14,6 +14,10 @@ namespace PsychotherapistWebSite.Models
         public DbSet<Verification> Verifications { get; set; }
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<Slide> Slides { get; set; }
+        public DbSet<Motto> Mottoes { get; set; }
+        public DbSet<Image> Images{ get; set; }
+        
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
@@ -23,6 +27,16 @@ namespace PsychotherapistWebSite.Models
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Slide>()
+                .HasRequired(s => s.Image);
+            modelBuilder.Entity<Slide>()
+                .HasRequired(s => s.Motto);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

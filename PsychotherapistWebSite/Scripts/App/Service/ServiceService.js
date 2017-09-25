@@ -25,7 +25,9 @@
         var data = {
             id: $("#service-id").val(),
             name: $(".js-form input").val(),
-            content: $(".js-form textarea").val()
+            content: $(".js-form textarea").val(),
+            ImageId1: $(".js-form .js-image1").val(),
+            ImageId2: $(".js-form .js-image2").val()
         };
 
         var success = function() {

@@ -1,6 +1,7 @@
 ﻿using PsychotherapistWebSite.Core.Repositories;
 using System.Web.Mvc;
 using PsychotherapistWebSite.Areas.User.Models;
+using PsychotherapistWebSite.Core.ViewModels;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers
 {
@@ -23,7 +24,15 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         {
             ViewBag.Title = "Yeni Alan Ekle";
             ViewBag.Action = ActionType.Save;
-            return View("Create", null);
+
+            var Images = _unitOfWork.Image.GetImages();
+
+            var viewModel = new ServiceViewModel()
+            {
+                Images = Images
+            };
+
+            return View(viewModel);
         }
 
         public ActionResult Edit(int id)
