@@ -321,6 +321,10 @@
     <Compile Include="Migrations\201709241242206_AddedImagesProıpertyToTheServiceClass.Designer.cs">
       <DependentUpon>201709241242206_AddedImagesProıpertyToTheServiceClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.cs" />
+    <Compile Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.Designer.cs">
+      <DependentUpon>201709251352535_AddedWithManyFluentApiToImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -500,9 +504,6 @@
     <Content Include="html\assets\sass\fontawesome\css\variables.css" />
     <Content Include="html\assets\sass\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
-    <Content Include="Images\Slide\70e79684-d5eb-4ef7-9c38-4e46498f71e2.jpg" />
-    <Content Include="Images\Slide\7ae30aa7-1e5a-4b2b-b57a-ef3fddac7bc7.jpg" />
-    <Content Include="Images\Slide\cbd37847-9016-4724-8af0-19a27166433f.jpg" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
@@ -972,6 +973,7 @@
     <Content Include="Areas\User\Views\Motto\Edit.cshtml" />
     <Content Include="Areas\User\Views\Slide\Delete.cshtml" />
     <Content Include="Areas\User\Views\Slide\Edit.cshtml" />
+    <Content Include="Areas\User\Views\Service\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1023,6 +1025,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\Web API\" />
+    <Folder Include="Images\Slide\" />
     <Folder Include="Persistance\Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -1097,6 +1100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709241242206_AddedImagesProıpertyToTheServiceClass.resx">
       <DependentUpon>201709241242206_AddedImagesProıpertyToTheServiceClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.resx">
+      <DependentUpon>201709251352535_AddedWithManyFluentApiToImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

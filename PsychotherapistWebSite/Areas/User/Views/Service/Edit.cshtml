@@ -1,0 +1,51 @@
+﻿@model PsychotherapistWebSite.Core.ViewModels.ServiceViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+@Html.HiddenFor(s => s.Id,new {id="service-id"})
+<h2>@ViewBag.Title</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 js-form">
+            <form class="js-service">
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Name)
+                    @Html.TextBoxFor(m => m.Name, new {@class = "form-control", type = "text", required = true, placeholder = "Alan İsmi"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Content)
+                    @Html.TextAreaFor(m => m.Content, new {@class = "form-control", rows = "12", required = true, placeholder = "Açıklma"})
+                    <span class="small text-muted js-counter">1000</span>
+                </div>
+           
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Image1.Name)
+                    @Html.DropDownListFor(m => m.Image1.Id, new SelectList(Model.AllImages, "Id", "Name"), "Seç", new {@class = "form-control js-image1"})
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Image2.Name)
+                    @Html.DropDownListFor(m => m.Image2.Id, new SelectList(Model.AllImages, "Id", "Name"), "Seç", new {@class = "form-control js-image2"})
+                </div>
+            </form>
+
+            <div class="pull-right">
+                <button type="button" data-type="@ViewBag.Action" class="btn btn-default js-service-cancel">İptal</button>
+                <button type="button" data-type="@ViewBag.Action" class="btn btn-info js-service-save">Düzenle</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            ServiceController.saveService();
+            ServiceController.cancel();
+            ServiceController.counter();
+        });
+    </script>
+}

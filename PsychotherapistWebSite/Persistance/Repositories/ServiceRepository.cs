@@ -30,9 +30,14 @@ namespace PsychotherapistWebSite.Persistance.Repositories
 
         public void PutService(Service service)
         {
-            var serviceDb = _context.Services.FirstOrDefault(s => s.Id == service.Id);
+            var serviceDb = _context.Services
+                .Include(s => s.Images)
+                .FirstOrDefault(s => s.Id == service.Id);
+
             if (serviceDb == null) return;
-            Mapper.Map(service,serviceDb);
+           //serviceDb.Images.Clear();
+           Mapper.Map(service, serviceDb);
+
         }
 
         public IEnumerable<Service> GetServices()
@@ -46,6 +51,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         public Service GetService(int id)
         {
             var service = _context.Services
+                .Include(s => s.Images)
                 .SingleOrDefault(s => s.Id == id);
             return service ?? null;
         }

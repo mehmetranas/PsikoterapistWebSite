@@ -15,7 +15,13 @@
 
 /*Override Mental Template*/
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    max-height: 400px;
+     max-height: 400px;
+}
+
+/*Home, Index Page*/
+
+.page-box--inline .page-box__picture {
+    max-width: 102px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */

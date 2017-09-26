@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.Core.ViewModels
@@ -17,9 +18,15 @@ namespace PsychotherapistWebSite.Core.ViewModels
         [StringLength(1000)]
         public string Content { get; set; }
 
-        public Image Image1 { get; set; }
-        public Image Image2 { get; set; }
+        public Image[] Images { get; set; }
 
-        public IEnumerable<Image> Images { get; set; }
+        public Image Image1 => Images.Length > 0 ? Images[0] : null;
+
+        public Image Image2 => Images.Length > 1 ? Images[1] : null;
+
+        public string TruncateContent => Content.Length > 35 ? Content.Substring(0, 35) : Content;
+
+        public IEnumerable<Image> AllImages { get; set; }
+
     }
 }

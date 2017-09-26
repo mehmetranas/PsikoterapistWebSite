@@ -36,6 +36,10 @@ namespace PsychotherapistWebSite.Models
             modelBuilder.Entity<Slide>()
                 .HasRequired(s => s.Motto);
 
+            modelBuilder.Entity<Service>()
+                .HasMany(s => s.Images)
+                .WithMany();
+
             base.OnModelCreating(modelBuilder);
         }
     }

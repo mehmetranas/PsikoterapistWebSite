@@ -48,7 +48,7 @@
 
     var cancel = function () {
         $("button.js-service-cancel").click(function() {
-            window.location.href = "/user/admin";
+            window.location.href = "/user/service";
         });
     }
 

@@ -9,7 +9,10 @@ namespace PsychotherapistWebSite.Core.ViewModels
 {
     public class HomeViewModel
     {
-        public IEnumerable<Service> Services { get; set; }
+        public ServiceViewModel[] Services { get; set; }
+        public ServiceViewModel Service1 => Services.Length > 0 ? Services[0] : null;
+        public ServiceViewModel Service2 => Services.Length > 0 ? Services[1] : null;
+        public ServiceViewModel Service3 => Services.Length > 0 ? Services[2] : null;
         public IEnumerable<Slide> Slides { get; set; }
     }
 }
