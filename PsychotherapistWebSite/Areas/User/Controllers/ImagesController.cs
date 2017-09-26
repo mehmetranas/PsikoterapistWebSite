@@ -5,6 +5,7 @@ using System;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
+using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers
 {

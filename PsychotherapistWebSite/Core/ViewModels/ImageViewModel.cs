@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Core.ViewModels
 {

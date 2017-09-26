@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.Core.ViewModels

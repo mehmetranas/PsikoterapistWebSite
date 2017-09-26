@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PsychotherapistWebSite.Models
+namespace PsychotherapistWebSite.Core.Models
 {
     public class Motto
     {

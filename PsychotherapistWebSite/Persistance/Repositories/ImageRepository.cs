@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
 {

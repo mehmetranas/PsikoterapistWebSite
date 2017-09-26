@@ -234,6 +234,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Models\WelcomeText.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
@@ -325,6 +326,14 @@
     <Compile Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.Designer.cs">
       <DependentUpon>201709251352535_AddedWithManyFluentApiToImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709261010058_FixInfoTable.cs" />
+    <Compile Include="Migrations\201709261010058_FixInfoTable.Designer.cs">
+      <DependentUpon>201709261010058_FixInfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261015318_AddedWelcomeTextTable.cs" />
+    <Compile Include="Migrations\201709261015318_AddedWelcomeTextTable.Designer.cs">
+      <DependentUpon>201709261015318_AddedWelcomeTextTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -338,9 +347,9 @@
     <Compile Include="Core\Models\ManageViewModels.cs" />
     <Compile Include="Core\Models\Service.cs" />
     <Compile Include="Core\Models\Verification.cs" />
-    <Compile Include="Models\Image.cs" />
-    <Compile Include="Models\Motto.cs" />
-    <Compile Include="Models\Slide.cs" />
+    <Compile Include="Core\Models\Image.cs" />
+    <Compile Include="Core\Models\Motto.cs" />
+    <Compile Include="Core\Models\Slide.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
@@ -1103,6 +1112,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.resx">
       <DependentUpon>201709251352535_AddedWithManyFluentApiToImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261010058_FixInfoTable.resx">
+      <DependentUpon>201709261010058_FixInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261015318_AddedWelcomeTextTable.resx">
+      <DependentUpon>201709261015318_AddedWelcomeTextTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

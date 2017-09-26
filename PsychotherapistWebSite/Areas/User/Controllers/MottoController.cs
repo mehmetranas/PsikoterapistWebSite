@@ -3,6 +3,7 @@ using PsychotherapistWebSite.Models;
 using System.Net;
 using System.Web.Mvc;
 using AutoMapper;
+using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers
 {
