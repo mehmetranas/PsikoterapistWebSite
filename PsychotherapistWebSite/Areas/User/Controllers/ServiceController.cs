@@ -1,4 +1,5 @@
-﻿using PsychotherapistWebSite.Core.Repositories;
+﻿using System.Linq;
+using PsychotherapistWebSite.Core.Repositories;
 using System.Web.Mvc;
 using PsychotherapistWebSite.Areas.User.Models;
 using PsychotherapistWebSite.Core.ViewModels;
@@ -25,11 +26,11 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
             ViewBag.Title = "Yeni Alan Ekle";
             ViewBag.Action = ActionType.Save;
 
-            var Images = _unitOfWork.Image.GetImages();
+            var images = _unitOfWork.Image.GetImages();
 
             var viewModel = new ServiceViewModel()
             {
-                Images = Images
+                AllImages = images
             };
 
             return View(viewModel);
@@ -38,9 +39,21 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         public ActionResult Edit(int id)
         {
             var service = _unitOfWork.Service.GetService(id);
-            ViewBag.Title = "Alan Düzenle";
+            ViewBag.Title = "Düzenle";
             ViewBag.Action = ActionType.Edit;
-            return View("Create", service);
+
+            var images = _unitOfWork.Image.GetImages();
+
+            var viewModel = new ServiceViewModel()
+            {
+                AllImages = images,
+                Name = service.Name,
+                Id = service.Id,
+                Content = service.Content,
+                Images = service.Images.ToArray()
+            };
+
+            return View(viewModel);
         }
 
     }

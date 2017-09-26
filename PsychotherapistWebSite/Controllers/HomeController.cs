@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
+using AutoMapper;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Core.ViewModels;
 
@@ -15,7 +17,7 @@ namespace PsychotherapistWebSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var services = _unitOfWork.Service.GetServices();
+            var services = _unitOfWork.Service.GetServices().Take(3).Select(Mapper.Map<ServiceViewModel>).ToArray();
             var slides = _unitOfWork.Slide.GetSlides();
             var viewModel = new HomeViewModel()
             {

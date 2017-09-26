@@ -4,6 +4,7 @@
             method: method,
             url: "/api/service",
             data: data,
+            contentType: "application/json",
             success: success,
             error: error
         });
@@ -22,13 +23,13 @@
     };
 
     var saveService = function () {
-        var data = {
+        var data = JSON.stringify({
             id: $("#service-id").val(),
             name: $(".js-form input").val(),
             content: $(".js-form textarea").val(),
             ImageId1: $(".js-form .js-image1").val(),
             ImageId2: $(".js-form .js-image2").val()
-        };
+        });
 
         var success = function() {
             bootbox.alert({
@@ -41,7 +42,7 @@
                 },
                 message: "Yeni Alan başarı ile eklendi.",
                 callback: function() {
-                    window.location.href = "/user/admin";
+                    window.location.href = "/user/service";
                 }
             });
         };
@@ -55,11 +56,13 @@
 
     var editService = function () {
 
-        var data = {
+        var data = JSON.stringify({
             id: $("#service-id").val(),
             name: $(".js-form input").val(),
-            content: $(".js-form textarea").val()
-        };
+            content: $(".js-form textarea").val(),
+            ImageId1: $(".js-form .js-image1").val(),
+            ImageId2: $(".js-form .js-image2").val()
+        });
 
         var success = function () {
             bootbox.alert({
@@ -72,7 +75,7 @@
                 },
                 message: "Güncellendi.",
                 callback: function () {
-                    window.location.href = "/user/admin";
+                    window.location.href = "/user/service";
                 }
             });
         };

@@ -26,7 +26,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
                 .ToList();
         
             _unitOfWork.Service.AddService(service);
-            _unitOfWork.Complete();
+            _unitOfWork.Complete(); 
 
             return Ok();
         }
@@ -43,7 +43,10 @@ namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
         public IHttpActionResult Edit(ServiceDto serviceDto)
         {
             var service = Mapper.Map<Service>(serviceDto);
-
+            service.Images = _unitOfWork.Image.GetImages()
+                .Where(i => i.Id == serviceDto.ImageId1 || i.Id == serviceDto.ImageId2)
+                .ToList();
+          
             _unitOfWork.Service.PutService(service);
             _unitOfWork.Complete();
 
