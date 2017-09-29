@@ -223,10 +223,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\User\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\FaqsController.cs" />
+    <Compile Include="Areas\User\Controllers\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\ImagesController.cs" />
     <Compile Include="Areas\User\Controllers\MottoController.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
+    <Compile Include="Areas\User\Controllers\WebAPI\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\WelcomeTextsController.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -236,6 +239,7 @@
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
     <Compile Include="Core\Models\WelcomeText.cs" />
+    <Compile Include="Core\Repositories\IFaqRepository.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
@@ -344,6 +348,10 @@
     <Compile Include="Migrations\201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.Designer.cs">
       <DependentUpon>201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.cs" />
+    <Compile Include="Migrations\201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.Designer.cs">
+      <DependentUpon>201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -360,6 +368,7 @@
     <Compile Include="Core\Models\Image.cs" />
     <Compile Include="Core\Models\Motto.cs" />
     <Compile Include="Core\Models\Slide.cs" />
+    <Compile Include="Persistance\Repositories\FaqRepository.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
@@ -525,10 +534,10 @@
     <Content Include="html\assets\sass\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
     <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\Controller\HomeFaqController.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
-    <Content Include="Scripts\App\Controller\WelcomeTextController.js" />
+    <Content Include="Scripts\App\Service\HomeFaqService.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
-    <Content Include="Scripts\App\Service\WelcomeTextService.js" />
     <Content Include="Scripts\Assests\appointment.js" />
     <Content Include="Scripts\Assests\contact_form.js" />
     <Content Include="Scripts\Assests\google-map.js" />
@@ -1001,6 +1010,12 @@
     <Content Include="Areas\User\Views\WelcomeTexts\Details.cshtml" />
     <Content Include="Areas\User\Views\WelcomeTexts\Edit.cshtml" />
     <Content Include="Areas\User\Views\WelcomeTexts\Index.cshtml" />
+    <Content Include="Areas\User\Views\Faqs\Create.cshtml" />
+    <Content Include="Areas\User\Views\Faqs\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Faqs\Details.cshtml" />
+    <Content Include="Areas\User\Views\Faqs\Edit.cshtml" />
+    <Content Include="Areas\User\Views\Faqs\Index.cshtml" />
+    <Content Include="Areas\User\Views\HomeFaq\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1051,6 +1066,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\User\Views\HomeSSS\" />
     <Folder Include="Controllers\Web API\" />
     <Folder Include="Images\Slide\" />
     <Folder Include="Persistance\Models\" />
@@ -1142,6 +1158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.resx">
       <DependentUpon>201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.resx">
+      <DependentUpon>201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

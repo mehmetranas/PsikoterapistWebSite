@@ -33,7 +33,9 @@ namespace PsychotherapistWebSite
             bundles.Add(new ScriptBundle("~/admin/scripts")
                 .Include("~/Scripts/App/app.js",
                 "~/Scripts/App/Controller/ServiceController.js",
-                "~/Scripts/App/Service/ServiceService.js"));
+                "~/Scripts/App/Service/ServiceService.js",
+                "~/Scripts/App/Controller/HomeFaqController.js",
+                "~/Scripts/App/Service/HomeFaqService.js"));
 
             bundles.Add(new StyleBundle("~/Content/css")
                 .Include("~/Content/site.css"));

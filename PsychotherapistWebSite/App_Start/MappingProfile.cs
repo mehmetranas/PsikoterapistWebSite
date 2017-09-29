@@ -16,6 +16,7 @@ namespace PsychotherapistWebSite.App_Start
             CreateMap<ServiceDto, Service>();
             CreateMap<Motto, Motto>();
             CreateMap<Service, Service>();
+            CreateMap<Faq, Faq>();
         }
     }
 }
