@@ -19,10 +19,12 @@ namespace PsychotherapistWebSite.Controllers
         {
             var services = _unitOfWork.Service.GetServices().Take(3).Select(Mapper.Map<ServiceViewModel>).ToArray();
             var slides = _unitOfWork.Slide.GetSlides();
+            var welcomeText = _unitOfWork.WelcomeText.GetWelcomeText();
             var viewModel = new HomeViewModel()
             {
                 Services = services,
-                Slides =  slides
+                Slides =  slides,
+                WelcomeText = welcomeText
             };
             return View(viewModel);
         }

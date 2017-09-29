@@ -52,26 +52,10 @@
         });
     }
 
-    var counter = function () {
-        $(".js-counter").html(1000 - $(".js-form textarea").val().length);
-        
-        $(".js-form textarea").on("input DOMContentLoaded",
-            function() {
-                var length = $(".js-form textarea").val().length;
-                var counter = 1000 - length;
-                $(".js-counter").html(counter);
-                if (counter < 0) {
-                    $(".js-counter").css({ "color": "red" });
-                } else {
-                    $(".js-counter").css({ "color": "black" });
-                }
-            });
-    }
 
     return {
         deleteService: deleteService,
         saveService: saveService,
-        cancel: cancel,
-        counter: counter
+        cancel: cancel
     }
 }();

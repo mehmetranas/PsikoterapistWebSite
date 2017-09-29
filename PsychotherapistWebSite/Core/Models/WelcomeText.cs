@@ -7,13 +7,12 @@ namespace PsychotherapistWebSite.Core.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Başlık")]
         public string Title { get; set; }
 
         [Required]
-        [StringLength(210)]
+        [StringLength(600), Display(Name = "İçerik")]
         public string Content { get; set; }
-
-        public bool IsActive { get; set; }
 
     }
 }

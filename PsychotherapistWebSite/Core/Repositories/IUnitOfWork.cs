@@ -6,6 +6,7 @@
         ISlideRepsitory Slide { get; }
         IMottoRepository Motto { get; }
         IImageRepository Image { get; }
+        IWelcomeTextRepository WelcomeText { get; }
 
         void Complete();
         void Dispose();
