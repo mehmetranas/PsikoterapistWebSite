@@ -1,4 +1,4 @@
-﻿@model PsychotherapistWebSite.Core.Models.Motto
+﻿@model PsychotherapistWebSite.Core.Models.WelcomeText
 
 @{
     ViewBag.Title = "Delete";
@@ -7,9 +7,9 @@
 
 <h2>Delete</h2>
 
-<h3>Silmek istediğinizden emin misiniz?</h3>
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Motto</h4>
+    <h4>WelcomeText</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -21,19 +21,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Text)
+            @Html.DisplayNameFor(model => model.Content)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Text)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Teller)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Teller)
+            @Html.DisplayFor(model => model.Content)
         </dd>
 
     </dl>
@@ -42,7 +34,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Sil" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-default" /> |
             @Html.ActionLink("Geri", "Index")
         </div>
     }

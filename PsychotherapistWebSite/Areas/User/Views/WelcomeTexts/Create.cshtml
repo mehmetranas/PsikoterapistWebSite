@@ -1,4 +1,4 @@
-﻿@model PsychotherapistWebSite.Core.Models.Motto
+﻿@model PsychotherapistWebSite.Core.Models.WelcomeText
 
 @{
     ViewBag.Title = "Create";
@@ -7,12 +7,12 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create","WelcomeTexts",FormMethod.Post)) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Motto</h4>
+    <div class="form-horizontal js-form">
+        <h4>WelcomeText</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -22,21 +22,16 @@
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
-            @Html.LabelFor(model => model.Text, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Text, new { @class = "form-control", rows = 8 })
-                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.Content, new { @class = "form-control", rows = 5 })
+                <span class="small text-muted js-counter">600</span>
+                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
             </div>
         </div>
-        
-        <div class="form-group">
-            @Html.LabelFor(model => model.Teller, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Teller, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Teller, "", new {@class = "text-danger"})
-            </div>
-        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -48,3 +43,11 @@
 <div>
     @Html.ActionLink("Geri", "Index")
 </div>
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            counter(600);
+        })
+    </script>
+}

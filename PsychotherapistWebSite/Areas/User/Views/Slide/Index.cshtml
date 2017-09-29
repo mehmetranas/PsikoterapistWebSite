@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PsychotherapistWebSite.Models.Slide>
+﻿@model IEnumerable<PsychotherapistWebSite.Core.Models.Slide>
 
 @{
     ViewBag.Title = "Index";
@@ -30,7 +30,7 @@
         <th></th>
     </tr>
 
-@{int i = 0;}
+@{var i = 0;}
 @foreach (var slide in Model)
 {
     i++;

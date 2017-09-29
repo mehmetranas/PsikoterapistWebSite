@@ -1,5 +1,6 @@
 ﻿using PsychotherapistWebSite.Models;
 using System.Collections.Generic;
+using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Core.Repositories
 {

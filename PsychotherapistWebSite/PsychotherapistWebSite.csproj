@@ -227,6 +227,7 @@
     <Compile Include="Areas\User\Controllers\MottoController.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
+    <Compile Include="Areas\User\Controllers\WelcomeTextsController.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\AdminController.cs" />
@@ -234,11 +235,13 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Models\WelcomeText.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
+    <Compile Include="Core\Repositories\IWelcomeText.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
@@ -325,6 +328,22 @@
     <Compile Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.Designer.cs">
       <DependentUpon>201709251352535_AddedWithManyFluentApiToImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709261010058_FixInfoTable.cs" />
+    <Compile Include="Migrations\201709261010058_FixInfoTable.Designer.cs">
+      <DependentUpon>201709261010058_FixInfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261015318_AddedWelcomeTextTable.cs" />
+    <Compile Include="Migrations\201709261015318_AddedWelcomeTextTable.Designer.cs">
+      <DependentUpon>201709261015318_AddedWelcomeTextTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261107507_FiexedWelcomeTextClass.cs" />
+    <Compile Include="Migrations\201709261107507_FiexedWelcomeTextClass.Designer.cs">
+      <DependentUpon>201709261107507_FiexedWelcomeTextClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.cs" />
+    <Compile Include="Migrations\201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.Designer.cs">
+      <DependentUpon>201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -338,14 +357,15 @@
     <Compile Include="Core\Models\ManageViewModels.cs" />
     <Compile Include="Core\Models\Service.cs" />
     <Compile Include="Core\Models\Verification.cs" />
-    <Compile Include="Models\Image.cs" />
-    <Compile Include="Models\Motto.cs" />
-    <Compile Include="Models\Slide.cs" />
+    <Compile Include="Core\Models\Image.cs" />
+    <Compile Include="Core\Models\Motto.cs" />
+    <Compile Include="Core\Models\Slide.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
     <Compile Include="Persistance\Repositories\SlideRepository.cs" />
     <Compile Include="Persistance\Repositories\UnitOfWork.cs" />
+    <Compile Include="Persistance\Repositories\WelcomeTextRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Core\ViewModels\ServiceViewModel.cs" />
@@ -506,7 +526,9 @@
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
+    <Content Include="Scripts\App\Controller\WelcomeTextController.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
+    <Content Include="Scripts\App\Service\WelcomeTextService.js" />
     <Content Include="Scripts\Assests\appointment.js" />
     <Content Include="Scripts\Assests\contact_form.js" />
     <Content Include="Scripts\Assests\google-map.js" />
@@ -974,6 +996,11 @@
     <Content Include="Areas\User\Views\Slide\Delete.cshtml" />
     <Content Include="Areas\User\Views\Slide\Edit.cshtml" />
     <Content Include="Areas\User\Views\Service\Edit.cshtml" />
+    <Content Include="Areas\User\Views\WelcomeTexts\Create.cshtml" />
+    <Content Include="Areas\User\Views\WelcomeTexts\Delete.cshtml" />
+    <Content Include="Areas\User\Views\WelcomeTexts\Details.cshtml" />
+    <Content Include="Areas\User\Views\WelcomeTexts\Edit.cshtml" />
+    <Content Include="Areas\User\Views\WelcomeTexts\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1103,6 +1130,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709251352535_AddedWithManyFluentApiToImage.resx">
       <DependentUpon>201709251352535_AddedWithManyFluentApiToImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261010058_FixInfoTable.resx">
+      <DependentUpon>201709261010058_FixInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261015318_AddedWelcomeTextTable.resx">
+      <DependentUpon>201709261015318_AddedWelcomeTextTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261107507_FiexedWelcomeTextClass.resx">
+      <DependentUpon>201709261107507_FiexedWelcomeTextClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.resx">
+      <DependentUpon>201709290811583_DeletedIsActivePropertyOnWelcomeTextClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
