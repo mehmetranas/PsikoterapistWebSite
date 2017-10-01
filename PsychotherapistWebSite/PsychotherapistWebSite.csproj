@@ -246,6 +246,7 @@
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IWelcomeText.cs" />
+    <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
