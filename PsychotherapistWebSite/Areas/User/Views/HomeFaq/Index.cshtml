@@ -15,11 +15,9 @@
         </th>
         <th></th>
     </tr>
-    @{
-        var i = 1;
-    }
+ 
     @foreach (var item in Model) {
-        <tr class="@(i<=2 ? "success":"")">
+        <tr class="@(item.IsDisplayOnHomePage ? "success":"")">
             <td >
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
@@ -27,7 +25,6 @@
                 <a href="#" ><i class="fa js-actionFaq @( @item.IsDisplayOnHomePage ? "fa-star" : "fa-star-o")" id="@item.Id"></i></a>
             </td>
         </tr>
-        i++;
     }
 
 </table>

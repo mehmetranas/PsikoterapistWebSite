@@ -4,6 +4,7 @@
         var method = "POST";
         var success = function () {
             $("#" + id).animateCss("jello").toggleClass("fa-star fa-star-o");
+            $("#" + id).closest("tr").toggleClass("success");
         };
         var error = function (data) {
             console.log(data);
@@ -16,6 +17,7 @@
         var method = "DELETE";
         var success = function () {
             $("#" + id).toggleClass("fa-star fa-star-o");
+            $("#" + id).closest("tr").toggleClass("success");
         };
         var error = function (data) {
             console.log(data);

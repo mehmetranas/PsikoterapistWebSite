@@ -14,6 +14,7 @@ namespace PsychotherapistWebSite.Core.ViewModels
         public ServiceViewModel Service2 => Services.Length > 0 ? Services[1] : null;
         public ServiceViewModel Service3 => Services.Length > 0 ? Services[2] : null;
         public WelcomeText WelcomeText { get; set; }
+        public IEnumerable<FaqViewModel> FaqViewModels { get; set; }
         public IEnumerable<Slide> Slides { get; set; }
     }
 }

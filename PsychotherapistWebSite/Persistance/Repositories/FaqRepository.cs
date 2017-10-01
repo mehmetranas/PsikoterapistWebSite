@@ -49,6 +49,12 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             return _context.Faqs.ToList();
         }
 
+        public IEnumerable<Faq> GetFaqsForHomePag()
+        {
+            return _context.Faqs.Where(f => f.IsDisplayOnHomePage).ToList();
+
+        }
+
         public int CountAsSign()
         {
             return _context.Faqs.Count(f => f.IsDisplayOnHomePage);

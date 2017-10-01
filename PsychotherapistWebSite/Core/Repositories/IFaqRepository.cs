@@ -10,6 +10,7 @@ namespace PsychotherapistWebSite.Core.Repositories
         void PutFaq(Faq faq);
         Faq GetFaq(int? id);
         IEnumerable<Faq> GetFaqs();
+        IEnumerable<Faq> GetFaqsForHomePag();
         int CountAsSign();
     }
 }
