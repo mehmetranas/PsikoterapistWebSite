@@ -223,10 +223,12 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\User\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\User\Controllers\AdressesController.cs" />
     <Compile Include="Areas\User\Controllers\FaqsController.cs" />
     <Compile Include="Areas\User\Controllers\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\ImagesController.cs" />
     <Compile Include="Areas\User\Controllers\MottoController.cs" />
+    <Compile Include="Areas\User\Controllers\InfoController.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\HomeFaqController.cs" />
@@ -240,13 +242,15 @@
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
     <Compile Include="Core\Models\WelcomeText.cs" />
+    <Compile Include="Core\Repositories\IAdressRepository.cs" />
     <Compile Include="Core\Repositories\IFaqRepository.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
+    <Compile Include="Core\Repositories\IInfoRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
-    <Compile Include="Core\Repositories\IWelcomeText.cs" />
+    <Compile Include="Core\Repositories\IWelcomeTextRepository.cs" />
     <Compile Include="Core\ViewModels\FaqsHomeViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
@@ -355,6 +359,14 @@
     <Compile Include="Migrations\201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.Designer.cs">
       <DependentUpon>201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710020746331_CahengeAdressClassRequiretment.cs" />
+    <Compile Include="Migrations\201710020746331_CahengeAdressClassRequiretment.Designer.cs">
+      <DependentUpon>201710020746331_CahengeAdressClassRequiretment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710020753331_AddedNamePropertToTheAdressClass.cs" />
+    <Compile Include="Migrations\201710020753331_AddedNamePropertToTheAdressClass.Designer.cs">
+      <DependentUpon>201710020753331_AddedNamePropertToTheAdressClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -371,8 +383,10 @@
     <Compile Include="Core\Models\Image.cs" />
     <Compile Include="Core\Models\Motto.cs" />
     <Compile Include="Core\Models\Slide.cs" />
+    <Compile Include="Persistance\Repositories\AdressRepository.cs" />
     <Compile Include="Persistance\Repositories\FaqRepository.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
+    <Compile Include="Persistance\Repositories\InfoRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
     <Compile Include="Persistance\Repositories\SlideRepository.cs" />
@@ -1021,6 +1035,13 @@
     <Content Include="Areas\User\Views\Faqs\Edit.cshtml" />
     <Content Include="Areas\User\Views\Faqs\Index.cshtml" />
     <Content Include="Areas\User\Views\HomeFaq\Index.cshtml" />
+    <Content Include="Areas\User\Views\Info\Index.cshtml" />
+    <Content Include="Areas\User\Views\Info\Create.cshtml" />
+    <Content Include="Areas\User\Views\Adresses\Create.cshtml" />
+    <Content Include="Areas\User\Views\Adresses\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Adresses\Details.cshtml" />
+    <Content Include="Areas\User\Views\Adresses\Edit.cshtml" />
+    <Content Include="Areas\User\Views\Adresses\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1167,6 +1188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.resx">
       <DependentUpon>201709291150137_AddedDisplayOnHomePagePropertyToFaqClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710020746331_CahengeAdressClassRequiretment.resx">
+      <DependentUpon>201710020746331_CahengeAdressClassRequiretment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710020753331_AddedNamePropertToTheAdressClass.resx">
+      <DependentUpon>201710020753331_AddedNamePropertToTheAdressClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

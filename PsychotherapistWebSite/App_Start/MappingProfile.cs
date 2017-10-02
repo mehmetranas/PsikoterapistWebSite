@@ -2,7 +2,6 @@
 using PsychotherapistWebSite.Core.Dtos;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.ViewModels;
-using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.App_Start
 {
@@ -19,6 +18,8 @@ namespace PsychotherapistWebSite.App_Start
             CreateMap<Faq, Faq>();
             CreateMap<Faq, FaqViewModel>();
             CreateMap<FaqViewModel, Faq>();
+            CreateMap<Info, Info>();
+            CreateMap<Adress, Adress>();
         }
     }
 }

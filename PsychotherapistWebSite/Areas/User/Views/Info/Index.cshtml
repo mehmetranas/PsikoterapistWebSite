@@ -1,0 +1,78 @@
+﻿@model PsychotherapistWebSite.Core.Models.Info
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Adresler", "Index", "Adresses")
+@if (Model == null)
+{
+    <p>
+        @Html.ActionLink("Oluştur", "Create")
+    </p> 
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PersonTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FaceBookUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YouTubeUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TweeterUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AboutMe)
+            </th>
+            <th></th>
+        </tr>
+
+
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => Model.PersonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.PersonTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.FaceBookUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.YouTubeUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.TweeterUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => Model.AboutMe)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=Model.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=Model.Id })
+            </td>
+        </tr>
+
+
+    </table>
+
+}
