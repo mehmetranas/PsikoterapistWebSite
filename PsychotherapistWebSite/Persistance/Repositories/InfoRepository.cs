@@ -41,5 +41,11 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             if (infoDb != null)
                 Mapper.Map(info,infoDb);
         }
+
+        public string AboutMe()
+        {
+            var info = _context.Info.FirstOrDefault();
+            return info?.AboutMe;
+        }
     }
 }

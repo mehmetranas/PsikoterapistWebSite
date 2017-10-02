@@ -67,22 +67,16 @@
                         </div>
                     </div>
 
-                    @*<a class="form-control" data-toggle="collapse" href="#information">Kişisel Bilgiler <i class="fa fa-angle-down pull-right"></i></a>
+                    <a class="form-control" data-toggle="collapse" href="#information">Diğer<i class="fa fa-angle-down pull-right"></i></a>
                     <div id="information" class="panel-collapse collapse">
                         <div class="form-group">
                             <ul class="list-service">
                                 <li>
-                                    @Html.ActionLink("İletişim", "Index", "Service", null, new { @class = "btn btn-link form-control text-left" })
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Sosyal Hesaplar", "Index", "Service", null, new { @class = "btn btn-link form-control" })
-                                </li>
-                                <li>
-                                    @Html.ActionLink("Hakkımda", "", "", null, new { @class = "btn btn-link form-control" })
+                                    @Html.ActionLink("Resimler", "Index", "Images", null, new { @class = "btn btn-link form-control text-left" })
                                 </li>
                             </ul>
                         </div>
-                    </div>*@
+                    </div>
                     @Html.ActionLink("Kişisel Bilgiler", "Index", "Info", null, new { @class = "form-control" })
                     @Html.ActionLink("Yorumlar", "Index", "Service", null, new { @class = "form-control" })
                     @Html.ActionLink("SSS", "Index", "Faqs", null, new { @class = "form-control" })

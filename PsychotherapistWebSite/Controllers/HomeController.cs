@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using System.Web.Mvc;
-using AutoMapper;
+﻿using AutoMapper;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Core.ViewModels;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace PsychotherapistWebSite.Controllers
 {
@@ -32,8 +32,11 @@ namespace PsychotherapistWebSite.Controllers
             return View(viewModel);
         }
 
-        //public ActionResult About()
-        //{
-        //}
+        public ActionResult About()
+        {
+            var abuotMe = _unitOfWork.Info.AboutMe();
+            ViewBag.AboutMe = abuotMe;
+            return View();
+        }
     }
 }

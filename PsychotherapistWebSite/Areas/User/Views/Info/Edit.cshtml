@@ -80,6 +80,16 @@
                 @Html.TextAreaFor(model => model.Info.AboutMe, new {  @class = "form-control", rows="15" } )
                 @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
             </div>
+            @Html.LabelFor(model => model.Info.AboutMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Info.AboutMe, new {  @class = "form-control", rows="15" } )
+                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
+            </div>
+            @Html.LabelFor(model => model.Info.AboutMe, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Info.AboutMe, new {  @class = "form-control", rows="15" } )
+                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
+            </div>
         </div>
 
         <div class="form-group">

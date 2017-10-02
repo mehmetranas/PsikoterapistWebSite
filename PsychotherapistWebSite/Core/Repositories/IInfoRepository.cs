@@ -8,5 +8,6 @@ namespace PsychotherapistWebSite.Core.Repositories
         void Add(Info info);
         void Delete();
         void Put(Info info);
+        string AboutMe();
     }
 }

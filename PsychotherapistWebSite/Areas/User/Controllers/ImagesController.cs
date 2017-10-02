@@ -1,11 +1,10 @@
-﻿using PsychotherapistWebSite.Core.Repositories;
+﻿using PsychotherapistWebSite.Core.Models;
+using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Core.ViewModels;
-using PsychotherapistWebSite.Models;
 using System;
 using System.IO;
 using System.Net;
 using System.Web.Mvc;
-using PsychotherapistWebSite.Core.Models;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers
 {
@@ -37,24 +36,20 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ImageViewModel viewModel)
         {
-            if (ModelState.IsValid)
-            {
-                if (viewModel.File != null)
-                {
-                    string extension = Path.GetExtension(viewModel.File.FileName);
-                    string guidNumber = Guid.NewGuid().ToString();
-                    string fileName = guidNumber + extension;
-                    viewModel.File.SaveAs(HttpContext.Server.MapPath("~/Images/Slide/")
-                                                          +fileName);
-                    viewModel.Image.Url = fileName;
-                    _unitOfWork.Image.Add(viewModel.Image);
-                    _unitOfWork.Complete();
-                }
-               
-                return RedirectToAction("Index");
-            }
+            if (!ModelState.IsValid) return View(viewModel);
 
-            return View(viewModel);
+            if (viewModel.File == null) return RedirectToAction("Index");
+
+            var extension = Path.GetExtension(viewModel.File.FileName);
+            var guidNumber = Guid.NewGuid().ToString();
+            var fileName = guidNumber + extension;
+            viewModel.File.SaveAs(HttpContext.Server.MapPath("~/Images/Slide/")
+                                  +fileName);
+            viewModel.Image.Url = fileName;
+            _unitOfWork.Image.Add(viewModel.Image);
+            _unitOfWork.Complete();
+
+            return RedirectToAction("Index");
         }
 
         // GET: User/Images/Delete/5
@@ -90,7 +85,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Image image = _unitOfWork.Image.GetImage(id);
+            var image = _unitOfWork.Image.GetImage(id);
             if (image == null)
             {
                 return HttpNotFound();
