@@ -1,0 +1,83 @@
+﻿@model PsychotherapistWebSite.Core.Models.Info
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Info</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PersonTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PersonTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FaceBookUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FaceBookUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YouTubeUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YouTubeUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TweeterUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TweeterUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AboutMe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AboutMe)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Geri", "Index")
+</p>

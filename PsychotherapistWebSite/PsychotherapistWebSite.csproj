@@ -255,6 +255,7 @@
     <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
+    <Compile Include="Core\ViewModels\InfoViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -366,6 +367,10 @@
     <Compile Include="Migrations\201710020753331_AddedNamePropertToTheAdressClass.cs" />
     <Compile Include="Migrations\201710020753331_AddedNamePropertToTheAdressClass.Designer.cs">
       <DependentUpon>201710020753331_AddedNamePropertToTheAdressClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710020814394_AddedAdressIdToInfoClass.cs" />
+    <Compile Include="Migrations\201710020814394_AddedAdressIdToInfoClass.Designer.cs">
+      <DependentUpon>201710020814394_AddedAdressIdToInfoClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -1042,6 +1047,9 @@
     <Content Include="Areas\User\Views\Adresses\Details.cshtml" />
     <Content Include="Areas\User\Views\Adresses\Edit.cshtml" />
     <Content Include="Areas\User\Views\Adresses\Index.cshtml" />
+    <Content Include="Areas\User\Views\Info\Edit.cshtml" />
+    <Content Include="Areas\User\Views\Info\Details.cshtml" />
+    <Content Include="Areas\User\Views\Info\Delete.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1194,6 +1202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710020753331_AddedNamePropertToTheAdressClass.resx">
       <DependentUpon>201710020753331_AddedNamePropertToTheAdressClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710020814394_AddedAdressIdToInfoClass.resx">
+      <DependentUpon>201710020814394_AddedAdressIdToInfoClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

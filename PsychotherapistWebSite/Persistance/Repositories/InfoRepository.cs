@@ -2,6 +2,7 @@
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
+using System.Data.Entity;
 using System.Linq;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
@@ -17,9 +18,11 @@ namespace PsychotherapistWebSite.Persistance.Repositories
 
         public Info GetInfo()
         {
-            return _context.Info.FirstOrDefault();
+            return _context.Info
+                .Include(i => i.Adress)
+                .FirstOrDefault();
         }
-
+    
         public void Add(Info info)
         {
             if (info != null) _context.Info.Add(info);
@@ -36,7 +39,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         {
             var infoDb = _context.Info.FirstOrDefault(i => i.Id == info.Id);
             if (infoDb != null)
-                Mapper.Map(infoDb,info);
+                Mapper.Map(info,infoDb);
         }
     }
 }

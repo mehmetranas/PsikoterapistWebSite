@@ -8,6 +8,7 @@
 <h2>Index</h2>
 
 @Html.ActionLink("Adresler", "Index", "Adresses")
+
 @if (Model == null)
 {
     <p>
@@ -25,19 +26,10 @@ else
                 @Html.DisplayNameFor(model => model.PersonTitle)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Adress.Name)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FaceBookUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.YouTubeUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TweeterUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AboutMe)
             </th>
             <th></th>
         </tr>
@@ -51,24 +43,15 @@ else
                 @Html.DisplayFor(modelItem => Model.PersonTitle)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => Model.Adress.Name)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => Model.Phone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => Model.FaceBookUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.YouTubeUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.TweeterUrl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => Model.AboutMe)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=Model.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=Model.Id })
+                @Html.ActionLink("Düzenle", "Edit", new { id=Model.Id }) |
+                @Html.ActionLink("Detay", "Details", new { id=Model.Id }) |
+                @Html.ActionLink("Sil", "Delete", new { id=Model.Id })
             </td>
         </tr>
 
