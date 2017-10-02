@@ -234,6 +234,7 @@
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\AdminController.cs" />
+    <Compile Include="Controllers\FaqsHomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
@@ -246,6 +247,7 @@
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IWelcomeText.cs" />
+    <Compile Include="Core\ViewModels\FaqsHomeViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
@@ -534,6 +536,8 @@
     <Content Include="html\assets\sass\fontawesome\css\variables.css" />
     <Content Include="html\assets\sass\fontawesome\fonts\fontawesome-webfont.svg" />
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
+    <Content Include="Images\Home\books.jpg" />
+    <Content Include="Images\Home\faq.jpeg" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controller\HomeFaqController.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
@@ -1064,6 +1068,7 @@
     <Content Include="Areas\User\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\FaqsHome\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
