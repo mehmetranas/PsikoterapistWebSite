@@ -372,6 +372,10 @@
     <Compile Include="Migrations\201710020814394_AddedAdressIdToInfoClass.Designer.cs">
       <DependentUpon>201710020814394_AddedAdressIdToInfoClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.cs" />
+    <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.Designer.cs">
+      <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -1206,6 +1210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710020814394_AddedAdressIdToInfoClass.resx">
       <DependentUpon>201710020814394_AddedAdressIdToInfoClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.resx">
+      <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

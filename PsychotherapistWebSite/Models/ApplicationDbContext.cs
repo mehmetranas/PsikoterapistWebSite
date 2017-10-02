@@ -41,6 +41,10 @@ namespace PsychotherapistWebSite.Models
                 .HasMany(s => s.Images)
                 .WithMany();
 
+            modelBuilder.Entity<Info>()
+                .HasMany(i => i.Images)
+                .WithMany();
+
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -5,7 +5,14 @@ namespace PsychotherapistWebSite.Core.Models
 {
     public class Info
     {
+        public Info()
+        {
+            Images = new HashSet<Image>();
+        }
+
         public int Id { get; set; }
+
+        public ICollection<Image> Images { get; set; }
 
         [Display(Name = "İsim")]
         [Required]
