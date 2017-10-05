@@ -1,5 +1,6 @@
 ﻿using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Core.ViewModels;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers
@@ -23,10 +24,12 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         {
             var info = _unitOfWork.Info.GetInfo();
             var adresses = _unitOfWork.Adress.GetAdresses();
-            var viewModel = new InfoViewModel
+            var allImages = _unitOfWork.Image.GetImages();
+            var viewModel = new InfoViewModel()
             {
                 Info = info,
-                Adresses = adresses
+                Adresses = adresses,
+                AllImages = allImages
             };
 
             return View(viewModel);
@@ -36,9 +39,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(InfoViewModel viewModel)
         {
-           // if (!ModelState.IsValid) return View(viewModel);
-
-            _unitOfWork.Info.Add(viewModel.Info);
+            _unitOfWork.Info.Add(viewModel.Info, viewModel.Images);
             _unitOfWork.Complete();
 
             return RedirectToAction("Index");
@@ -51,10 +52,14 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
 
             var info = _unitOfWork.Info.GetInfo();
             var adresses = _unitOfWork.Adress.GetAdresses();
-            var viewModel = new InfoViewModel
+            var allImages = _unitOfWork.Image.GetImages();
+            var viewModel = new InfoViewModel()
             {
                 Info = info,
-                Adresses = adresses
+                Adresses = adresses,
+                AllImages = allImages,
+                Images = info.Images.ToArray()
+                
             };
             return View(viewModel);
         }
@@ -65,7 +70,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         {
             if (viewModel.Info == null) return RedirectToAction("Index");
 
-            _unitOfWork.Info.Put(viewModel.Info);
+           // _unitOfWork.Info.Put(viewModel.Info, viewModel.Image1.Id,viewModel.Image2.Id);
             _unitOfWork.Complete();
             return RedirectToAction("Index");
         }

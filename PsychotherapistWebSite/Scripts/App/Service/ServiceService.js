@@ -32,19 +32,7 @@
         });
 
         var success = function() {
-            bootbox.alert({
-                size: "small",
-                buttons: {
-                    ok: {
-                        label: "Tamam",
-                        className: "btn btn-success"
-                    }
-                },
-                message: "Yeni Alan başarı ile eklendi.",
-                callback: function() {
-                    window.location.href = "/user/service";
-                }
-            });
+            bootbox.alert(BootboxController.add("/user/service"));
         };
 
         var error = function (textStatus) {
@@ -65,19 +53,7 @@
         });
 
         var success = function () {
-            bootbox.alert({
-                size: "small",
-                buttons: {
-                    ok: {
-                        label: "Tamam",
-                        className: "btn btn-success"
-                    }
-                },
-                message: "Güncellendi.",
-                callback: function () {
-                    window.location.href = "/user/service";
-                }
-            });
+            bootbox.alert(BootboxController.save("/user/service"));
         };
 
         var error = function (textStatus) {

@@ -69,27 +69,27 @@
                 @Html.ValidationMessageFor(model => model.Info.TweeterUrl, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Info.AboutMe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-8">
-                @Html.TextAreaFor(model => model.Info.AboutMe, new { @class = "form-control", rows="15" } )
-                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
+        <hr />
+            <div class="form-group">
+            @Html.LabelFor(model => model.Info.AboutMe, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-6">
+                @Html.TextAreaFor(model => model.Info.AboutMe, new {@class = "form-control", rows = "15"})
+                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new {@class = "text-danger"})
             </div>
-            @Html.LabelFor(model => model.Images, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-8">
-                @Html.DropDownListFor(model => model.Images[0].Id, new { @class = "form-control" } )
-                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
+            @Html.Label("Resim 1", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.Images[0].Id, new SelectList(Model.AllImages, "Id", "Name"), "Seç", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new {@class = "text-danger"})
             </div>
-            @Html.LabelFor(model => model.Info.AboutMe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-8">
-                @Html.TextAreaFor(model => model.Info.AboutMe, new { @class = "form-control", rows="15" } )
-                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
+            @Html.Label("Resim 2", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.Images[1].Id, new SelectList(Model.AllImages, "Id", "Name"), "Seç", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new {@class = "text-danger"})
             </div>
-            @Html.LabelFor(model => model.Info.AboutMe, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-8">
-                @Html.TextAreaFor(model => model.Info.AboutMe, new { @class = "form-control", rows="15" } )
-                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new { @class = "text-danger" })
+            @Html.Label("Resim 3", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.Images[2].Id, new SelectList(Model.AllImages, "Id", "Name"), "Seç", new {@class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Info.AboutMe, "", new {@class = "text-danger"})
             </div>
         </div>
 

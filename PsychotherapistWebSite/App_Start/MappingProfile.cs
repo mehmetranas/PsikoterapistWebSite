@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using PsychotherapistWebSite.Areas.User.Dtos;
 using PsychotherapistWebSite.Core.Dtos;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.ViewModels;
@@ -20,6 +21,7 @@ namespace PsychotherapistWebSite.App_Start
             CreateMap<FaqViewModel, Faq>();
             CreateMap<Info, Info>();
             CreateMap<Adress, Adress>();
+            CreateMap<InfoDto, Info>();
         }
     }
 }

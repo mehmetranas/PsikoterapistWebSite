@@ -1,6 +1,6 @@
-﻿using System.Data.Entity;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
 using PsychotherapistWebSite.Core.Models;
+using System.Data.Entity;
 
 namespace PsychotherapistWebSite.Models
 {
@@ -44,6 +44,7 @@ namespace PsychotherapistWebSite.Models
             modelBuilder.Entity<Info>()
                 .HasMany(i => i.Images)
                 .WithMany();
+
 
             base.OnModelCreating(modelBuilder);
         }
