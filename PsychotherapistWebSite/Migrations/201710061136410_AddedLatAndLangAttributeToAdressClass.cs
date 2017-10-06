@@ -1,0 +1,20 @@
+namespace PsychotherapistWebSite.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class AddedLatAndLangAttributeToAdressClass : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Adresses", "Latitude", c => c.String());
+            AddColumn("dbo.Adresses", "Longitude", c => c.String());
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Adresses", "Longitude");
+            DropColumn("dbo.Adresses", "Latitude");
+        }
+    }
+}

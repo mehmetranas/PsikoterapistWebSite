@@ -7,6 +7,7 @@
         public string PersonTitle { get; set; }
         public string Phone { get; set; }
         public int AdressId { get; set; }
+        public string Mail { get; set; }
         public string FaceBookUrl { get; set; }
         public string YouTubeUrl { get; set; }
         public string TweeterUrl { get; set; }

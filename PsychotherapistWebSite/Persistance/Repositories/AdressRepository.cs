@@ -42,7 +42,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         public void Put(Adress adress)
         {
             var adressDb = _context.Adresses.FirstOrDefault(a => a.Id == adress.Id);
-            if (adressDb != null) Mapper.Map(adressDb, adress);
+            if (adressDb != null) Mapper.Map(adress, adressDb);
         }
     }
 }

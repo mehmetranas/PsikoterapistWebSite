@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -233,8 +234,10 @@
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\InfoController.cs" />
+    <Compile Include="Areas\User\Controllers\WebAPI\MessageController.cs" />
     <Compile Include="Areas\User\Controllers\WelcomeTextsController.cs" />
     <Compile Include="Areas\User\Dtos\InfoDto.cs" />
+    <Compile Include="Areas\User\Dtos\MessageDto.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\AdminController.cs" />
@@ -243,16 +246,19 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Models\Message.cs" />
     <Compile Include="Core\Models\WelcomeText.cs" />
     <Compile Include="Core\Repositories\IAdressRepository.cs" />
     <Compile Include="Core\Repositories\IFaqRepository.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IInfoRepository.cs" />
+    <Compile Include="Core\Repositories\IMessageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IWelcomeTextRepository.cs" />
+    <Compile Include="Core\ViewModels\ContactViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqsHomeViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
@@ -378,6 +384,22 @@
     <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.Designer.cs">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.cs" />
+    <Compile Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.Designer.cs">
+      <DependentUpon>201710060929182_AddedMailAttributeToInfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.cs" />
+    <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.Designer.cs">
+      <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710061751118_AddedMessageTable.cs" />
+    <Compile Include="Migrations\201710061751118_AddedMessageTable.Designer.cs">
+      <DependentUpon>201710061751118_AddedMessageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.cs" />
+    <Compile Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.Designer.cs">
+      <DependentUpon>201710061758225_AddedIsReadPropertyToMessageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -398,6 +420,7 @@
     <Compile Include="Persistance\Repositories\FaqRepository.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\InfoRepository.cs" />
+    <Compile Include="Persistance\Repositories\MessageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
     <Compile Include="Persistance\Repositories\SlideRepository.cs" />
@@ -563,6 +586,8 @@
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
     <Content Include="Images\Home\books.jpg" />
     <Content Include="Images\Home\faq.jpeg" />
+    <Content Include="Images\icons\flag16x.png" />
+    <Content Include="Images\icons\flag64x.png" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controller\BootboxController.js" />
     <Content Include="Scripts\App\Controller\HomeFaqController.js" />
@@ -1065,6 +1090,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1108,6 +1134,7 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\FaqsHome\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1218,6 +1245,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.resx">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.resx">
+      <DependentUpon>201710060929182_AddedMailAttributeToInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.resx">
+      <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061751118_AddedMessageTable.resx">
+      <DependentUpon>201710061751118_AddedMessageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.resx">
+      <DependentUpon>201710061758225_AddedIsReadPropertyToMessageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,100 @@
+﻿
+@model PsychotherapistWebSite.Core.ViewModels.ContactViewModel
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+<div class="content-container">
+
+    <div class="main-title">
+        <h1 class="main-title__primary">İletişim</h1>
+        <h3 class="main-title__secondary">Buradan iletmek istediğiniz mesajları yazabilirsiniz</h3>
+    </div>
+
+    <article>
+
+        <!-- ============================
+        GOOGLE MAP
+        ============================ -->
+
+        <div class="panel-grid row">
+            <div class="col-md-12 panel-grid-cell">
+
+                <div class="map" id="map_canvas" data-latitude="@Model.Adress.Latitude" data-longitude="@Model.Adress.Longitude" data-pin-img="../../Images/icons/flag64x.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="panel-grid row m-b-0">
+            <div class="col-md-4 panel-grid-cell">
+
+                <!-- ============================
+                ADDRESS
+                ============================ -->
+
+                <div class="textwidget">
+                    <h5>@Model.Adress.Name</h5>
+                    <p>@Model.Adress.Place
+                        <br>@Model.Adress.Street
+                        <br>No:@Model.Adress.Number
+                        <br>@Model.Adress.Town
+                    <br>@Model.Adress.City</p>
+                    <p><span class="fa fa-phone fa-3x">&nbsp; @Model.Phone</span>
+                        <br><a href="#">@Model.Mail</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-8 panel-grid-cell">
+
+                <!-- ============================
+                CONTACT FORM
+                ============================ -->
+
+                <div class="textwidget">
+                    <div role="form" lang="en-US" dir="ltr">
+
+                        <form action="php/contact.php" method="post" id="phpcontactform" novalidate="novalidate" data-redirect="none">
+
+                            <div class="row">
+                                <div class="col-xs-12  col-sm-6">
+                                    <div class="c-form-group">
+                                        <input type="text" name="name" size="40" class="form-text" required="required" placeholder="İsminiz">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <input type="email" name="email" size="40" class="form-text form-email" required="required" placeholder="Mail Adresiniz">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <input type="text" name="subject" size="40" class="form-text" required="required" placeholder="Konu">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12  col-sm-6">
+                                    <div class="c-form-group">
+                                        <textarea name="message" cols="40" rows="10" class="form-textarea" placeholder="Mesaj"></textarea>
+                                    </div>
+
+                                    <input type="submit" value="Gönder" id="js-contact-btn" class="form-submit btn btn-primary">
+                                </div>
+
+                                <!-- // end .js-contact-result -->
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+@section scripts
+{
+    <script>
+     
+    </script>
+}
