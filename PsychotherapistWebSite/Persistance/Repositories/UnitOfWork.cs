@@ -1,5 +1,4 @@
-﻿using System;
-using PsychotherapistWebSite.Core.Repositories;
+﻿using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
@@ -14,6 +13,8 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         public IImageRepository Image { get; }
         public IWelcomeTextRepository WelcomeText { get; }
         public IFaqRepository Faq { get; }
+        public IInfoRepository Info { get; set; }
+        public IAdressRepository Adress { get; set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -24,6 +25,8 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             Image = new ImageRepository(_context);
             WelcomeText = new WelcomeTextRepository(_context);
             Faq = new FaqRepository(_context);
+            Info = new InfoRepository(_context);
+            Adress = new AdressRepository(_context);
         }
 
         public void Complete()

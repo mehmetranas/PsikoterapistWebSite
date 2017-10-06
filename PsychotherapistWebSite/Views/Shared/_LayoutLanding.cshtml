@@ -145,7 +145,7 @@ CONTAINER
         <nav id="main-navigation" class="main-navigation__container">
             <div class="main-navigation__title"> Navigasyon</div>
             <ul id="menu-main-menu" class="main-navigation">
-                <li class="menu-item current-menu-item current_page_item"><a href="index.html">Ana Sayfa</a>
+                <li class="menu-item current-menu-item current_page_item"><a href="@Url.Action("Index","Home")">Ana Sayfa</a>
 
                 </li>
                 <li class="menu-item menu-item-has-children"><a href="services.html">Alanlarım</a>
@@ -159,7 +159,7 @@ CONTAINER
                         <li class="menu-item"><a href="post-divorce-recovery.html">Post-divorce Recovery</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="about.html">Hakkımda</a></li>
+                <li class="menu-item"><a href="@Url.Action("About","Home")">Hakkımda</a></li>
                 <li class="menu-item"><a href="blog.html">Blog</a></li>
                 <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
                     <ul class="sub-menu">

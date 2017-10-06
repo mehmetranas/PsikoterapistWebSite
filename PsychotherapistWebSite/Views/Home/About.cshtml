@@ -1,0 +1,41 @@
+﻿@model PsychotherapistWebSite.Core.Models.Info
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+<div class="content-container">
+
+    <div class="main-title">
+        <h1 class="main-title__primary">Hakkımda</h1>
+        <h3 class="main-title__secondary">Kısaca kendimden bahsedersem...</h3>
+    </div>
+
+    <div>
+
+        <div class="panel-grid row m-b-0">
+            <div class="col-md-6 panel-grid-cell">
+                <div class="textwidget">
+                    <p>@Model.AboutMe</p>
+                </div>
+            </div>
+            <!-- // end .col-md-6 -->
+            <div class="col-md-6 panel-grid-cell">
+                <div class="textwidget lightbox">
+                    @foreach (var image in Model.Images)
+                    {
+                        <p>
+                            <a href="/Images/Slide/@image.Url"><img class="alignnone size-full wp-image-99" src="/Images/Slide/@image.Url" alt="@image.Name" width="850" height="480"></a>
+                        </p>
+                    }
+                  </div>
+            </div>
+            <!-- // end .col-md-6 -->
+        </div>
+        <!-- // end .row -->
+
+    </div>
+
+</div>
+
+

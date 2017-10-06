@@ -16,6 +16,7 @@ namespace PsychotherapistWebSite
 
             bundles.Add(new ScriptBundle("~/assests/scripts")
                 .Include("~/Scripts/Assests/picturefill.min.js",
+                         "~/Scripts/Assests/magnific-popup.js",
                          "~/Scripts/Assests/main.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -33,7 +34,10 @@ namespace PsychotherapistWebSite
             bundles.Add(new ScriptBundle("~/admin/scripts")
                 .Include("~/Scripts/App/app.js",
                 "~/Scripts/App/Controller/ServiceController.js",
+                "~/Scripts/App/Controller/BootboxController.js",
                 "~/Scripts/App/Service/ServiceService.js",
+                "~/Scripts/App/Service/InfoService.js",
+                "~/Scripts/App/Controller/InfoController.js",
                 "~/Scripts/App/Controller/HomeFaqController.js",
                 "~/Scripts/App/Service/HomeFaqService.js"));
 
@@ -41,7 +45,8 @@ namespace PsychotherapistWebSite
                 .Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/assests/css")
-                .Include("~/Content/Assests/css/style.css"));
+                .Include("~/Content/Assests/css/style.css",
+                         "~/Content/Assests/css/magnific-popup.css"));
 
             bundles.Add(new StyleBundle("~/lib/css")
                 .Include("~/Content/animate.css",

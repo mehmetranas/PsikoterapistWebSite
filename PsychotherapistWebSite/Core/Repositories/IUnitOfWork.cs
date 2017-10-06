@@ -8,6 +8,8 @@
         IImageRepository Image { get; }
         IWelcomeTextRepository WelcomeText { get; }
         IFaqRepository Faq { get; }
+        IInfoRepository Info { get; set; }
+        IAdressRepository Adress { get; set; }
 
         void Complete();
         void Dispose();

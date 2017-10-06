@@ -1,26 +1,9 @@
 ﻿var ServiceController = function () {
     var deleteService = function () {
         $(".js-service-delete").on("click", function (e) {
-            bootbox.confirm({
-                size: "small",
-                buttons: {
-                    confirm: {
-                        label: "Evet",
-                        className:"btn btn-danger"
-                    },
-                    cancel: {
-                        label: "İptal",
-                        className:"btn btn-default"
-                    }
-                },
-                message: "Silmek istediğinizden emin misiniz?",
-                callback: function (result) {
-                    if (result) {
-                        var id = $(e.target).attr("id");
-                        ServiceService.delete(id);
-                    }
-                }
-            });
+            var id = $(e.target).attr("id");
+
+            bootbox.confirm(BootboxController.delete(id));
         });
     };
     

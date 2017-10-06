@@ -13,6 +13,6 @@ namespace PsychotherapistWebSite.Core.ViewModels
 
         private IEnumerable<Faq> Faqs { get; }
         public IEnumerable<Faq> Part1 => Faqs.Take(Faqs.Count() - Faqs.Count() / 2);
-        public IEnumerable<Faq> Part2 => Faqs.Take(Faqs.Count() / 2);
+        public IEnumerable<Faq> Part2 => Faqs.Skip(Faqs.Count() - Faqs.Count() / 2).Take(Faqs.Count() / 2);
     }
 }
