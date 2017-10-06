@@ -234,8 +234,10 @@
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\InfoController.cs" />
+    <Compile Include="Areas\User\Controllers\WebAPI\MessageController.cs" />
     <Compile Include="Areas\User\Controllers\WelcomeTextsController.cs" />
     <Compile Include="Areas\User\Dtos\InfoDto.cs" />
+    <Compile Include="Areas\User\Dtos\MessageDto.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\AdminController.cs" />
@@ -244,11 +246,13 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Models\Message.cs" />
     <Compile Include="Core\Models\WelcomeText.cs" />
     <Compile Include="Core\Repositories\IAdressRepository.cs" />
     <Compile Include="Core\Repositories\IFaqRepository.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IInfoRepository.cs" />
+    <Compile Include="Core\Repositories\IMessageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
@@ -388,6 +392,14 @@
     <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.Designer.cs">
       <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710061751118_AddedMessageTable.cs" />
+    <Compile Include="Migrations\201710061751118_AddedMessageTable.Designer.cs">
+      <DependentUpon>201710061751118_AddedMessageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.cs" />
+    <Compile Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.Designer.cs">
+      <DependentUpon>201710061758225_AddedIsReadPropertyToMessageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -408,6 +420,7 @@
     <Compile Include="Persistance\Repositories\FaqRepository.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\InfoRepository.cs" />
+    <Compile Include="Persistance\Repositories\MessageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
     <Compile Include="Persistance\Repositories\SlideRepository.cs" />
@@ -1238,6 +1251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.resx">
       <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061751118_AddedMessageTable.resx">
+      <DependentUpon>201710061751118_AddedMessageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.resx">
+      <DependentUpon>201710061758225_AddedIsReadPropertyToMessageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

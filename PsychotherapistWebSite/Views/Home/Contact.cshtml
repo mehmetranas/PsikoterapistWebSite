@@ -8,8 +8,8 @@
 <div class="content-container">
 
     <div class="main-title">
-        <h1 class="main-title__primary">Contact</h1>
-        <h3 class="main-title__secondary">WWe are waiting you to get in touch with us.</h3>
+        <h1 class="main-title__primary">İletişim</h1>
+        <h3 class="main-title__secondary">Buradan iletmek istediğiniz mesajları yazabilirsiniz</h3>
     </div>
 
     <article>
@@ -38,8 +38,9 @@
                     <p>@Model.Adress.Place
                         <br>@Model.Adress.Street
                         <br>No:@Model.Adress.Number
-                    <br/>@Model.Adress.City</p>
-                    <p>@Model.Phone
+                        <br>@Model.Adress.Town
+                    <br>@Model.Adress.City</p>
+                    <p><span class="fa fa-phone fa-3x">&nbsp; @Model.Phone</span>
                         <br><a href="#">@Model.Mail</a></p>
                 </div>
 
@@ -95,4 +96,5 @@
 {
     <script>
      
-    </script>}
+    </script>
+}
