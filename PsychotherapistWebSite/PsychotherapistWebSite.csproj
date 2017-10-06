@@ -573,6 +573,8 @@
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
     <Content Include="Images\Home\books.jpg" />
     <Content Include="Images\Home\faq.jpeg" />
+    <Content Include="Images\icons\flag16x.png" />
+    <Content Include="Images\icons\flag64x.png" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controller\BootboxController.js" />
     <Content Include="Scripts\App\Controller\HomeFaqController.js" />
@@ -1075,6 +1077,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
