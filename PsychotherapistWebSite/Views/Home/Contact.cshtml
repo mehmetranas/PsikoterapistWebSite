@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+<div class="content-container">
+
+    <div class="main-title">
+        <h1 class="main-title__primary">Contact</h1>
+        <h3 class="main-title__secondary">WWe are waiting you to get in touch with us.</h3>
+    </div>
+
+    <article>
+
+        <!-- ============================
+        GOOGLE MAP
+        ============================ -->
+
+        <div class="panel-grid row">
+            <div class="col-md-12 panel-grid-cell">
+
+                <div class="map" id="map_canvas" data-latitude="46.0661174" data-longitude="14.5320991" data-pin-img="../../Content/Assests/images/logo.png">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="panel-grid row m-b-0">
+            <div class="col-md-4 panel-grid-cell">
+
+                <!-- ============================
+                ADDRESS
+                ============================ -->
+
+                <div class="textwidget">
+                    <h5>MENTALPRESS LTD.</h5>
+                    <p>Jennifer Armstrong, Ph.D
+                        <br>227 Marion Street
+                        <br>Columbia, SC 29201</p>
+                    <p>1-888-123-4567
+                        <br>1-888-123-4568
+                        <br><a href="mailto:info@mentalpress.com">info@mentalpress.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-8 panel-grid-cell">
+
+                <!-- ============================
+                CONTACT FORM
+                ============================ -->
+
+                <div class="textwidget">
+                    <div role="form" lang="en-US" dir="ltr">
+
+                        <form action="php/contact.php" method="post" id="phpcontactform" novalidate="novalidate" data-redirect="none">
+
+                            <div class="row">
+                                <div class="col-xs-12  col-sm-6">
+                                    <div class="c-form-group">
+                                        <input type="text" name="name" size="40" class="form-text" required="required" placeholder="Your Name">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <input type="email" name="email" size="40" class="form-text form-email" required="required" placeholder="E-mail address">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <input type="text" name="subject" size="40" class="form-text" required="required" placeholder="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12  col-sm-6">
+                                    <div class="c-form-group">
+                                        <textarea name="message" cols="40" rows="10" class="form-textarea" placeholder="Message"></textarea>
+                                    </div>
+
+                                    <input type="submit" value="SEND MESSAGE" id="js-contact-btn" class="form-submit btn btn-primary">
+                                </div>
+
+                                <!-- // end .js-contact-result -->
+
+                            </div>
+
+                            <div class="m-t" id="js-contact-result" data-success-msg="Thank you for contacting us. We will get back to you soon." data-error-msg="Oops! Mail not sent. Please try sending directly to our email id.">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+@section scripts
+{
+    <script>
+        var map = new google.maps.Map();
+        google.maps.event.addListener(map, 'click', function (event) {
+            alert("Latitude: " + event.latLng.lat() + " " + ", longitude: " + event.latLng.lng());
+        });
+    </script>}

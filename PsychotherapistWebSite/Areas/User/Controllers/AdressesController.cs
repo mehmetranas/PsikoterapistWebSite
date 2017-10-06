@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using PsychotherapistWebSite.Core.Models;
+﻿using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
-using PsychotherapistWebSite.Models;
+using System.Net;
+using System.Web.Mvc;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers
 {
@@ -34,7 +27,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Adress adress = _unitOfWork.Adress.GetAdress(id);
+            var adress = _unitOfWork.Adress.GetAdress(id);
             if (adress == null)
             {
                 return HttpNotFound();
@@ -53,7 +46,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Place,Street,Number,Town,City")] Adress adress)
+        public ActionResult Create([Bind(Include = "Id,Name,Place,Street,Number,Town,City,Latitude,Longitude")] Adress adress)
         {
             if (!ModelState.IsValid) return View(adress);
             _unitOfWork.Adress.Add(adress);
@@ -81,7 +74,7 @@ namespace PsychotherapistWebSite.Areas.User.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Place,Street,Number,Town,City")] Adress adress)
+        public ActionResult Edit([Bind(Include = "Id,Name,Place,Street,Number,Town,City,Latitude,Longitude")] Adress adress)
         {
             if (!ModelState.IsValid) return View(adress);
             _unitOfWork.Adress.Put(adress);

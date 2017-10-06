@@ -175,7 +175,7 @@ CONTAINER
                         <li class="menu-item"><a href="brochure-box.html">Brochure Box</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="contact.html">İletişim</a></li>
+                <li class="menu-item"><a href="@Url.Action("Contact","Home")">İletişim</a></li>
             </ul> <a class="btn  btn-primary  btn-featured-page" target="_self" href="appointment.html">Soru Sor</a>
         </nav>
         <div class="widget  widget-about-us">
@@ -285,8 +285,9 @@ CONTAINER
 </footer>
 
 @Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap") 
-@Scripts.Render("~/assests/scripts") 
+@Scripts.Render("~/bundles/bootstrap")
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+@Scripts.Render("~/assests/scripts")
 @RenderSection("scripts", required: false)
 
 </body>

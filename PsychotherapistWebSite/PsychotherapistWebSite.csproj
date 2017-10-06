@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -253,6 +254,7 @@
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IWelcomeTextRepository.cs" />
+    <Compile Include="Core\ViewModels\ContactViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqsHomeViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
@@ -377,6 +379,14 @@
     <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.cs" />
     <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.Designer.cs">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.cs" />
+    <Compile Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.Designer.cs">
+      <DependentUpon>201710060929182_AddedMailAttributeToInfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.cs" />
+    <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.Designer.cs">
+      <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -1108,6 +1118,7 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\FaqsHome\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1218,6 +1229,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.resx">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.resx">
+      <DependentUpon>201710060929182_AddedMailAttributeToInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.resx">
+      <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

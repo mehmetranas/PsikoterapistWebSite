@@ -17,6 +17,7 @@ namespace PsychotherapistWebSite
             bundles.Add(new ScriptBundle("~/assests/scripts")
                 .Include("~/Scripts/Assests/picturefill.min.js",
                          "~/Scripts/Assests/magnific-popup.js",
+                         "~/Scripts/Assests/google-map.js",
                          "~/Scripts/Assests/main.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
