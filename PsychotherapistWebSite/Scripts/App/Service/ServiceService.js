@@ -12,7 +12,7 @@
 
     var deleteService = function (id) {
         var success = function() {
-            $("tr#" + id).animateCss("fadeOutUp");
+            $("tr#" + id).animateCss("fadeOutUp").remove();
         };
 
         var error = function(textStatus) {

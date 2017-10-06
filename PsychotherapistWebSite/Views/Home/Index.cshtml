@@ -95,22 +95,17 @@ CONTENT
         ============================ -->
 
         <div class="panel-grid row m-b-lg">
-            <div class="col-md-6">
-                <div class="so-panel widget widget_pw_banner widget-banner panel-first-child panel-last-child" id="panel-6-1-0-0">
-                    <a class="banner" href="http://frequently-asked-questions" target="_self">
-                        <div class="banner__title"> Privacy Policy</div>
-                        <div class="banner__content"> Between Doctors and Patients</div>
-                    </a>
+            @foreach (var faq in Model.FaqViewModels)
+            {
+                <div class="col-md-6">
+                    <div class="so-panel widget widget_pw_banner widget-banner panel-first-child panel-last-child" id="panel-6-1-0-0">
+                        <a class="banner" href="@Url.Action("Index","FaqsHome")" target="_self">
+                            <div class="banner__title"> @faq.Title</div>
+                            <div class="banner__content"> @faq.TruncateText...</div>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="so-panel widget widget_pw_banner widget-banner panel-first-child panel-last-child" id="panel-6-1-1-0">
-                    <a class="banner" href="http://shop" target="_self">
-                        <div class="banner__title"> Book Recommendations</div>
-                        <div class="banner__content"> Couple of Books We Recommend You</div>
-                    </a>
-                </div>
-            </div>
+            }
         </div>
 
         <!-- ========  // END HIGHLIGHT LINK ======== -->

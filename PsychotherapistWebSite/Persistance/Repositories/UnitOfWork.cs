@@ -13,6 +13,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         public IMottoRepository Motto { get; }
         public IImageRepository Image { get; }
         public IWelcomeTextRepository WelcomeText { get; }
+        public IFaqRepository Faq { get; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -22,6 +23,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             Motto = new MottoRepository(_context);
             Image = new ImageRepository(_context);
             WelcomeText = new WelcomeTextRepository(_context);
+            Faq = new FaqRepository(_context);
         }
 
         public void Complete()

@@ -7,6 +7,7 @@
         IMottoRepository Motto { get; }
         IImageRepository Image { get; }
         IWelcomeTextRepository WelcomeText { get; }
+        IFaqRepository Faq { get; }
 
         void Complete();
         void Dispose();

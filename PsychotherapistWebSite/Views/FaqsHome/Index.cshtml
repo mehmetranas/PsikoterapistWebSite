@@ -1,0 +1,50 @@
+﻿@model PsychotherapistWebSite.Core.ViewModels.FaqsHomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+<div class="content-container">
+
+    <div class="main-title">
+        <h1 class="main-title__primary">Sık Sorulan Sorular</h1>
+        <h3 class="main-title__secondary">Burada Seanslar Hakkında Sıklıkla Sorulan Soruları Bulabilirsiniz</h3>
+    </div>
+
+    <article>
+
+        <div class="textwidget">
+            <p>
+                <a href="../../Images/Home/faq.jpeg"><img class="alignnone size-full" src="../../Images/Home/faq.jpeg" alt="MentalPress" width="850" height="480"></a>
+            </p>
+        </div>
+
+        <div class="panel-grid row m-b-0">
+            <div class="panel-grid-cell col-md-6">
+                @foreach (var faq in Model.Part1)
+                {
+                    <div class="textwidget m-b-lg" id="@faq.Id">
+                        <h4>@faq.Title &nbsp;</h4>
+                        <p>&nbsp;@faq.Text</p>
+                    </div>
+                }
+            </div>
+            <!-- // end .panel-grid-cell col-md-6 -->
+            <div class="panel-grid-cell col-md-6">
+                @foreach (var faq in Model.Part2)
+                {
+                    <div class="textwidget m-b-lg" id="@faq.Id">
+                        <h4>@faq.Title&nbsp;</h4>
+                        <p>&nbsp;@faq.Text</p>
+                    </div>
+                }
+
+            </div>
+            <!-- // end .panel-grid-cell col-md-6 -->
+        </div>
+        <!-- // end .panel-grid row -->
+
+    </article>
+
+</div>
