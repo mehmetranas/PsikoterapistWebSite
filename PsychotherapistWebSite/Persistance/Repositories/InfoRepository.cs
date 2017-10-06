@@ -56,8 +56,8 @@ namespace PsychotherapistWebSite.Persistance.Repositories
 
         public string AboutMe()
         {
-            var info = _context.Info.FirstOrDefault();
-            return info?.AboutMe;
+            var info = _context.Info.Select(i => i.AboutMe).FirstOrDefault();
+            return info;
         }
     }
 }

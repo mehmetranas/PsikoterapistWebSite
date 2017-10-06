@@ -13,7 +13,9 @@
                     tweeterUrl: $("#js-tweeter").val(),
                     aboutme: $("#js-aboutme").val(),
                     imagesId: [
-                        $("#js-image1Id").val(), $("#js-image2Id").val()
+                        $("#js-image1Id").val(),
+                        $("#js-image2Id").val(),
+                        $("#js-image3Id").val()
                     ]
                 }
 

@@ -89,8 +89,14 @@
             </div>
             @Html.Label("Resim 2", htmlAttributes: new {@class = "control-label col-md-2"})
             <div class="col-md-2">
-                @Html.DropDownListFor(model => model.Image2.Id, new SelectList(Model.AllImages, "Id", "Name"), new {@class = "form-control", id = "js-image2Id"})
+                @Html.DropDownListFor(model => model.Image2.Id, new SelectList(Model.AllImages, "Id", "Name"),
+               "Seç",new {@class = "form-control", id = "js-image2Id"})
                 @Html.ValidationMessageFor(model => model.Image2.Id, "", new {@class = "text-danger"})
+            </div>
+            @Html.Label("Resim 3", htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-2">
+                @Html.DropDownListFor(model => model.Image3.Id, new SelectList(Model.AllImages, "Id", "Name"), "Seç",new {@class = "form-control", id = "js-image3Id"})
+                @Html.ValidationMessageFor(model => model.Image3.Id, "", new {@class = "text-danger"})
             </div>
 
         </div>

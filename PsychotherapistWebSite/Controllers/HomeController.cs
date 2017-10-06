@@ -34,9 +34,8 @@ namespace PsychotherapistWebSite.Controllers
 
         public ActionResult About()
         {
-            var abuotMe = _unitOfWork.Info.AboutMe();
-            ViewBag.AboutMe = abuotMe;
-            return View();
+            var info = _unitOfWork.Info.GetInfo();
+            return View(info);
         }
     }
 }

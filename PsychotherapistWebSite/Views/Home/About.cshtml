@@ -1,4 +1,4 @@
-﻿
+﻿@model PsychotherapistWebSite.Core.Models.Info
 @{
     ViewBag.Title = "About";
     Layout = "~/Views/Shared/_LayoutLanding.cshtml";
@@ -8,7 +8,7 @@
 
     <div class="main-title">
         <h1 class="main-title__primary">Hakkımda</h1>
-        <h3 class="main-title__secondary">Kısaca hakkımda söyleyebileceklerim</h3>
+        <h3 class="main-title__secondary">Kısaca kendimden bahsedersem...</h3>
     </div>
 
     <div>
@@ -16,23 +16,19 @@
         <div class="panel-grid row m-b-0">
             <div class="col-md-6 panel-grid-cell">
                 <div class="textwidget">
-                    <p>@ViewBag.AboutMe</p>
+                    <p>@Model.AboutMe</p>
                 </div>
             </div>
             <!-- // end .col-md-6 -->
             <div class="col-md-6 panel-grid-cell">
                 <div class="textwidget lightbox">
-                    <p>
-                        <a href=""><img class="alignnone size-full wp-image-99" src="../../Images/Home/books.jpg " alt="" width="850" height="480"></a>
-                    </p>
-                    <p>
-                        <a href=""><img class="alignnone size-full wp-image-99" src="" alt="" width="850" height="480"></a>
-                    </p>
-                    <p>
-                        <a href=""><img class="alignnone size-full wp-image-99" src="" alt="" width="850" height="480"></a>
-                    </p>
-
-                </div>
+                    @foreach (var image in Model.Images)
+                    {
+                        <p>
+                            <a href="/Images/Slide/@image.Url"><img class="alignnone size-full wp-image-99" src="/Images/Slide/@image.Url" alt="@image.Name" width="850" height="480"></a>
+                        </p>
+                    }
+                  </div>
             </div>
             <!-- // end .col-md-6 -->
         </div>
@@ -40,6 +36,6 @@
 
     </div>
 
-</div>
+</div>
 
 
