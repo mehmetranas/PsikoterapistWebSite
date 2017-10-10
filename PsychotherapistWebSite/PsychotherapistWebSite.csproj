@@ -252,6 +252,7 @@
     <Compile Include="Core\Repositories\IFaqRepository.cs" />
     <Compile Include="Core\Repositories\IImageRepository.cs" />
     <Compile Include="Core\Repositories\IInfoRepository.cs" />
+    <Compile Include="Core\Repositories\IMessageRepository.cs" />
     <Compile Include="Core\Repositories\IMottoRepository.cs" />
     <Compile Include="Core\Repositories\IServiceRepository.cs" />
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
@@ -386,6 +387,10 @@
     <Compile Include="Migrations\201710100916508_AddedMessageTable.Designer.cs">
       <DependentUpon>201710100916508_AddedMessageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710101611072_FixDateTimeAtMessageClass.cs" />
+    <Compile Include="Migrations\201710101611072_FixDateTimeAtMessageClass.Designer.cs">
+      <DependentUpon>201710101611072_FixDateTimeAtMessageClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -406,6 +411,7 @@
     <Compile Include="Persistance\Repositories\FaqRepository.cs" />
     <Compile Include="Persistance\Repositories\ImageRepository.cs" />
     <Compile Include="Persistance\Repositories\InfoRepository.cs" />
+    <Compile Include="Persistance\Repositories\MessageRepository.cs" />
     <Compile Include="Persistance\Repositories\MottoRepository.cs" />
     <Compile Include="Persistance\Repositories\ServiceRepository.cs" />
     <Compile Include="Persistance\Repositories\SlideRepository.cs" />
@@ -1234,6 +1240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710100916508_AddedMessageTable.resx">
       <DependentUpon>201710100916508_AddedMessageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710101611072_FixDateTimeAtMessageClass.resx">
+      <DependentUpon>201710101611072_FixDateTimeAtMessageClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

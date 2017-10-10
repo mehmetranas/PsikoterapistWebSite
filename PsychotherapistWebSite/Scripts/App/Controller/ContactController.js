@@ -9,7 +9,7 @@
                     Name: $("#name").val(),
                     Email: $("#email").val(),
                     Title: $("#title").val(),
-                    Message: $("#messageText").val(),
+                    MessageText: $("#messageText").val(),
                     IsRead: false,
                     DateTime: null
                 };
@@ -22,7 +22,8 @@
                 },5000);
             };
 
-            var error = function () {
+            var error = function (xhr) {
+                console.log(xhr);
                 $("#validation").show().addClass("alert alert-warning").text("Üzgünüm! Mesajınız iletilemedi, lütfen daha sonra tekrar deneyiniz.");
                 setTimeout(function () {
                     $("#validation").animateHide("fadeOut");

@@ -1,4 +1,6 @@
-﻿using PsychotherapistWebSite.Core.Dtos;
+﻿using AutoMapper;
+using PsychotherapistWebSite.Core.Dtos;
+using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using System.Web.Http;
 
@@ -16,6 +18,9 @@ namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
         [HttpPost]
         public IHttpActionResult Create(MessageDto messageDto)
         {
+            var message = Mapper.Map<MessageDto, Messages>(messageDto);
+            _unitOfWork.Message.Add(message);
+            _unitOfWork.Complete();
             return Ok();
         }
     }
