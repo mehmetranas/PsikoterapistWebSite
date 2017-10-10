@@ -17,6 +17,7 @@
     <!-- Page Title -->
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/assests/css")
+    @Styles.Render("~/lib/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/css")
 
@@ -175,7 +176,7 @@ CONTAINER
                         <li class="menu-item"><a href="brochure-box.html">Brochure Box</a></li>
                     </ul>
                 </li>
-                <li class="menu-item"><a href="contact.html">İletişim</a></li>
+                <li class="menu-item"><a href="@Url.Action("Contact","Home")">İletişim</a></li>
             </ul> <a class="btn  btn-primary  btn-featured-page" target="_self" href="appointment.html">Soru Sor</a>
         </nav>
         <div class="widget  widget-about-us">
@@ -285,6 +286,7 @@ CONTAINER
 </footer>
 
 @Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
 @Scripts.Render("~/bundles/bootstrap") 
 @Scripts.Render("~/assests/scripts") 
 @RenderSection("scripts", required: false)

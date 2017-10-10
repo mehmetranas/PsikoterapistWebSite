@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+< <div class="content-container">
+
+    <div class="main-title">
+        <h1 class="main-title__primary">Contact</h1>
+        <h3 class="main-title__secondary">WWe are waiting you to get in touch with us.</h3>
+    </div>
+
+    <article>
+
+        <!-- ============================
+        GOOGLE MAP
+        ============================ -->
+
+        <div class="panel-grid row">
+            <div class="col-md-12 panel-grid-cell">
+
+                <div class="map" id="map_canvas" data-latitude="46.0661174" data-longitude="14.5320991" data-pin-img="assets/images/pin.png">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="panel-grid row m-b-0">
+            <div class="col-md-4 panel-grid-cell">
+
+                <!-- ============================
+                ADDRESS
+                ============================ -->
+
+                <div class="textwidget">
+                    <h5>MENTALPRESS LTD.</h5>
+                    <p>Jennifer Armstrong, Ph.D
+                        <br>227 Marion Street
+                        <br>Columbia, SC 29201</p>
+                    <p>1-888-123-4567
+                        <br>1-888-123-4568
+                        <br><a href="mailto:info@mentalpress.com">info@mentalpress.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-8 panel-grid-cell">
+
+                <!-- ============================
+                CONTACT FORM
+                ============================ -->
+
+                <div class="textwidget">
+                    <div role="form" lang="en-US" dir="ltr">
+
+                        <form id="contactform">
+
+                            <div class="row">
+                                <div class="col-xs-12  col-sm-6">
+                                    <div class="c-form-group">
+                                        <input type="text" id="name" size="40" class="form-text" required="required" placeholder="İsim">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <input type="email" id="email" size="40" class="form-text form-email" required="required" placeholder="E-mail adresi">
+                                    </div>
+                                    <div class="c-form-group">
+                                        <input type="text" id="title" size="40" class="form-text" required="required" placeholder="Başlık">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12  col-sm-6">
+                                    <div class="c-form-group">
+                                        <textarea id="messageText" cols="40" rows="10" class="form-textarea" required="required" placeholder="Mesaj"></textarea>
+                                    </div>
+
+                                    <input type="button" value="Gönder" id="contact-btn" class="form-submit btn btn-primary">
+                                </div>
+
+                                <!-- // end .js-contact-result -->
+
+                            </div>
+                            <br/>
+                            <div class="alert" id="validation" hidden>
+                            <span>Show span</span>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            ContactController.send();
+            animate();
+        });
+        
+    </script>
+}
+

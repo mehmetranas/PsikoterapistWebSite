@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -233,6 +234,7 @@
     <Compile Include="Areas\User\Controllers\SlideController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\InfoController.cs" />
+    <Compile Include="Areas\User\Controllers\WebAPI\MessageController.cs" />
     <Compile Include="Areas\User\Controllers\WelcomeTextsController.cs" />
     <Compile Include="Areas\User\Dtos\InfoDto.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
@@ -242,7 +244,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
+    <Compile Include="Core\Dtos\MessageDto.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
+    <Compile Include="Core\Models\Messages.cs" />
     <Compile Include="Core\Models\WelcomeText.cs" />
     <Compile Include="Core\Repositories\IAdressRepository.cs" />
     <Compile Include="Core\Repositories\IFaqRepository.cs" />
@@ -377,6 +381,10 @@
     <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.cs" />
     <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.Designer.cs">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710100916508_AddedMessageTable.cs" />
+    <Compile Include="Migrations\201710100916508_AddedMessageTable.Designer.cs">
+      <DependentUpon>201710100916508_AddedMessageTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -564,10 +572,13 @@
     <Content Include="Images\Home\books.jpg" />
     <Content Include="Images\Home\faq.jpeg" />
     <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\appHome.js" />
     <Content Include="Scripts\App\Controller\BootboxController.js" />
+    <Content Include="Scripts\App\Controller\ContactController.js" />
     <Content Include="Scripts\App\Controller\HomeFaqController.js" />
     <Content Include="Scripts\App\Controller\InfoController.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
+    <Content Include="Scripts\App\Service\ContactService.js" />
     <Content Include="Scripts\App\Service\HomeFaqService.js" />
     <Content Include="Scripts\App\Service\InfoService.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
@@ -1067,6 +1078,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.override.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -1108,6 +1120,7 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\FaqsHome\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1218,6 +1231,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.resx">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710100916508_AddedMessageTable.resx">
+      <DependentUpon>201710100916508_AddedMessageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

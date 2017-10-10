@@ -37,5 +37,10 @@ namespace PsychotherapistWebSite.Controllers
             var info = _unitOfWork.Info.GetInfo();
             return View(info);
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }
