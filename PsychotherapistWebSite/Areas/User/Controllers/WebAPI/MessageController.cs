@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using PsychotherapistWebSite.Core.Dtos;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
@@ -40,6 +41,13 @@ namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
             _unitOfWork.Complete();
 
             return Ok();
+        }
+
+        [HttpGet]
+        public int GetUnreadMessageCount()
+        {
+            var result = _unitOfWork.Message.UnReadMessage().Count();
+            return result;
         }
     }
 }

@@ -54,3 +54,7 @@
 ul.list-service a {
     text-align: right
 }
+
+.notification {
+    color: rgb(199, 38, 86);
+}

@@ -1,4 +1,5 @@
-﻿using PsychotherapistWebSite.Core.Models;
+﻿using System.Collections.Generic;
+using PsychotherapistWebSite.Core.Models;
 using System.Linq;
 
 namespace PsychotherapistWebSite.Core.Repositories
@@ -10,5 +11,6 @@ namespace PsychotherapistWebSite.Core.Repositories
         IQueryable<Messages> GetMessages();
         Messages GetMessage(int? id);
         void Put(Messages messages);
+        IEnumerable<Messages> UnReadMessage();
     }
 }

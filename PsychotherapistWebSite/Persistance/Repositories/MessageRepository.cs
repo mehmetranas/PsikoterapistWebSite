@@ -1,4 +1,5 @@
-﻿using PsychotherapistWebSite.Core.Models;
+﻿using System.Collections.Generic;
+using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
 using System.Data.Entity;
@@ -44,6 +45,11 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         {
             if(messages == null) return;
             _context.Entry(messages).State = EntityState.Modified;
+        }
+
+        public IEnumerable<Messages> UnReadMessage()
+        {
+            return _context.Messageses.Where(m => m.IsRead == false);
         }
     }
 }
