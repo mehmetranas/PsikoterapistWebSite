@@ -7,9 +7,10 @@
 
 <h2>Mesajlar</h2>
 
-<table id="message-table" class="display" cellspacing="0" width="100%">
+<table id="message-table" class="display table" cellspacing="0" width="100%">
     <thead>
-     <tr>
+    <tr>
+        <th></th>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
@@ -25,7 +26,10 @@
 
 @foreach (var item in Model) {
     <tbody>
-    <tr>
+    <tr class="@(@item.IsRead ? "" : "active")">
+        <td>
+            <span class="fa fa-lg @(@item.IsRead ? "fa-envelope-open-o" : "fa-envelope-o")"></span> 
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Name)
         </td>
@@ -36,7 +40,7 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.ActionLink("Oku", "Details", new { id=item.Id })
+           @Html.ActionLink("Oku", "Details", new {id = item.Id})
             <button type="button" class="btn btn-link btn-sm fa fa-trash fa-lg js-btn-delete" id="@item.Id">
                 Sil
             </button>

@@ -9,7 +9,11 @@
     });
     };
 
+    var readAction = function(id, success, fail) {
+        $.post("/api/message/" + id).done(success).fail(fail);
+    }
     return {
-        delete: deleteAction
+        delete: deleteAction,
+        read: readAction
     }
 }();

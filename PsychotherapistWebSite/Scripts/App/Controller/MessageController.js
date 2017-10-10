@@ -20,7 +20,18 @@
             });
     }
 
+    var readAction = function (id) {
+        var success = function() {
+            console.log("read");
+        };
+        var fail = function() {
+            console.log("Fail");
+        };
+        MessageService.read(id, success, fail);
+    }
+
     return {
-        delete: deleteAction
+        delete: deleteAction,
+        read: readAction
     }
 }();

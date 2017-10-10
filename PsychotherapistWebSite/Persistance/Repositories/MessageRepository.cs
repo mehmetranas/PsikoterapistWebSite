@@ -1,7 +1,7 @@
-﻿using System.Data.Entity;
-using PsychotherapistWebSite.Core.Models;
+﻿using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
+using System.Data.Entity;
 using System.Linq;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
@@ -30,7 +30,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
 
         public IQueryable<Messages> GetMessages()
         {
-            return _context.Messageses;
+            return _context.Messageses.OrderByDescending(m => m.IsRead);
         }
 
         public Messages GetMessage(int? id)

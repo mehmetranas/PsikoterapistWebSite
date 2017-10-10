@@ -52,3 +52,11 @@
         @Html.ActionLink("Geri", "Index")
     </div>
 }
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            MessageController.read(@Model.Id);
+        });
+    </script>
+}
