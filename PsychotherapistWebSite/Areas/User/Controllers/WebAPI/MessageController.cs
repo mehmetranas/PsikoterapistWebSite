@@ -23,5 +23,23 @@ namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
             _unitOfWork.Complete();
             return Ok();
         }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            _unitOfWork.Message.Delete(id);
+            _unitOfWork.Complete();
+            return Ok();
+        }
+
+        [HttpPost]
+        public IHttpActionResult Read(int id)
+        {
+            var message = _unitOfWork.Message.GetMessage(id);
+            message.Read();
+            _unitOfWork.Complete();
+
+            return Ok();
+        }
     }
 }

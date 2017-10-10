@@ -32,15 +32,18 @@ namespace PsychotherapistWebSite
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/lib/scripts")
-                .Include("~/Scripts/bootbox.min.js"));
+                .Include("~/Scripts/bootbox.min.js",
+                         "~/Scripts/datatables.min.js"));
 
             bundles.Add(new ScriptBundle("~/admin/scripts")
                 .Include("~/Scripts/App/app.js",
                 "~/Scripts/App/Controller/ServiceController.js",
                 "~/Scripts/App/Controller/BootboxController.js",
                 "~/Scripts/App/Service/ServiceService.js",
+                "~/Scripts/App/Service/MessageService.js",
                 "~/Scripts/App/Service/InfoService.js",
                 "~/Scripts/App/Controller/InfoController.js",
+                "~/Scripts/App/Controller/MessageController.js",
                 "~/Scripts/App/Controller/HomeFaqController.js",
                 "~/Scripts/App/Service/HomeFaqService.js"));
 
@@ -53,6 +56,7 @@ namespace PsychotherapistWebSite
 
             bundles.Add(new StyleBundle("~/lib/css")
                 .Include("~/Content/animate.css",
+                "~/Content/datatables.css",
                 "~/Content/font-awesome.css"));
 
             bundles.Add(new StyleBundle("~/bootstrap/css")

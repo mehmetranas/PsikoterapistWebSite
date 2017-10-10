@@ -31,5 +31,10 @@ namespace PsychotherapistWebSite.Core.Models
         public bool IsRead { get; set; }
 
         public DateTime DateTime => DateTime.Now;
+
+        public void Read()
+        {
+            IsRead = true;
+        }
     }
 }

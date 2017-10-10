@@ -228,6 +228,7 @@
     <Compile Include="Areas\User\Controllers\FaqsController.cs" />
     <Compile Include="Areas\User\Controllers\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\ImagesController.cs" />
+    <Compile Include="Areas\User\Controllers\MessagesController.cs" />
     <Compile Include="Areas\User\Controllers\MottoController.cs" />
     <Compile Include="Areas\User\Controllers\InfoController.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
@@ -563,6 +564,7 @@
     <Content Include="Content\Assests\css\woocommerce.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatables.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\Assests\fontawesome-webfont.svg" />
@@ -583,10 +585,12 @@
     <Content Include="Scripts\App\Controller\ContactController.js" />
     <Content Include="Scripts\App\Controller\HomeFaqController.js" />
     <Content Include="Scripts\App\Controller\InfoController.js" />
+    <Content Include="Scripts\App\Controller\MessageController.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
     <Content Include="Scripts\App\Service\ContactService.js" />
     <Content Include="Scripts\App\Service\HomeFaqService.js" />
     <Content Include="Scripts\App\Service\InfoService.js" />
+    <Content Include="Scripts\App\Service\MessageService.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
     <Content Include="Scripts\Assests\appointment.js" />
     <Content Include="Scripts\Assests\contact_form.js" />
@@ -1076,9 +1080,12 @@
     <Content Include="Areas\User\Views\Info\Edit.cshtml" />
     <Content Include="Areas\User\Views\Info\Details.cshtml" />
     <Content Include="Areas\User\Views\Info\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Messages\Details.cshtml" />
+    <Content Include="Areas\User\Views\Messages\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datatables.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

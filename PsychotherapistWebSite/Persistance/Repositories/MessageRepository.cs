@@ -1,7 +1,8 @@
-﻿using System.Linq;
+﻿using System.Data.Entity;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
+using System.Linq;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
 {
@@ -24,7 +25,25 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         {
             var message = _context.Messageses.FirstOrDefault(m => m.Id == id);
             if (message != null)
-                _context.Messageses.Add(message);
+                _context.Messageses.Remove(message);
+        }
+
+        public IQueryable<Messages> GetMessages()
+        {
+            return _context.Messageses;
+        }
+
+        public Messages GetMessage(int? id)
+        {
+            if (id == null) return null;
+            var message = _context.Messageses.FirstOrDefault(m => m.Id == id);
+            return message;
+        }
+
+        public void Put(Messages messages)
+        {
+            if(messages == null) return;
+            _context.Entry(messages).State = EntityState.Modified;
         }
     }
 }
