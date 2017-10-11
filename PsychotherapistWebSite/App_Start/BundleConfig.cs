@@ -42,6 +42,8 @@ namespace PsychotherapistWebSite
                 "~/Scripts/App/Service/ServiceService.js",
                 "~/Scripts/App/Service/MessageService.js",
                 "~/Scripts/App/Service/InfoService.js",
+                "~/Scripts/App/Service/MapService.js",
+                "~/Scripts/App/Controller/MapController.js",
                 "~/Scripts/App/Controller/InfoController.js",
                 "~/Scripts/App/Controller/MessageController.js",
                 "~/Scripts/App/Controller/HomeFaqController.js",
