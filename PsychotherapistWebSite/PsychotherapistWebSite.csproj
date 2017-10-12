@@ -396,6 +396,10 @@
     <Compile Include="Migrations\201710112032598_AddGeoInfoToAdressTable.Designer.cs">
       <DependentUpon>201710112032598_AddGeoInfoToAdressTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710120903108_AddMailPropertyToInfoTable.cs" />
+    <Compile Include="Migrations\201710120903108_AddMailPropertyToInfoTable.Designer.cs">
+      <DependentUpon>201710120903108_AddMailPropertyToInfoTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
     <Compile Include="Core\Models\Adress.cs" />
@@ -583,6 +587,9 @@
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
     <Content Include="Images\Home\books.jpg" />
     <Content Include="Images\Home\faq.jpeg" />
+    <Content Include="Images\Icons\mapsflag-lg.png" />
+    <Content Include="Images\Icons\mapsflag-ylw-lg.png" />
+    <Content Include="Images\Icons\mapsflag.png" />
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\appHome.js" />
     <Content Include="Scripts\App\Controller\BootboxController.js" />
@@ -1259,6 +1266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710112032598_AddGeoInfoToAdressTable.resx">
       <DependentUpon>201710112032598_AddGeoInfoToAdressTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710120903108_AddMailPropertyToInfoTable.resx">
+      <DependentUpon>201710120903108_AddMailPropertyToInfoTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

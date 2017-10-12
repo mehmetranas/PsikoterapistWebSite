@@ -28,6 +28,10 @@ namespace PsychotherapistWebSite.Core.Models
         [Display(Name = "Adress")]
         public Adress Adress { get; set; }
 
+        [Display(Name = "Mail")]
+        [EmailAddress]
+        public string Mail { get; set; }
+
         [Display(Name = "Facebook Adresiniz")]
         public string FaceBookUrl { get; set; }
 

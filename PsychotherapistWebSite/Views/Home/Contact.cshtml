@@ -1,4 +1,5 @@
-﻿
+﻿@model PsychotherapistWebSite.Core.Models.Info
+
 @{
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_LayoutLanding.cshtml";
@@ -7,8 +8,8 @@
 < <div class="content-container">
 
     <div class="main-title">
-        <h1 class="main-title__primary">Contact</h1>
-        <h3 class="main-title__secondary">WWe are waiting you to get in touch with us.</h3>
+        <h1 class="main-title__primary">İletişim</h1>
+        <h3 class="main-title__secondary">Buradan mesajlarınızı, merak ettiklerinizi bana yazabilirsiniz.</h3>
     </div>
 
     <article>
@@ -20,7 +21,10 @@
         <div class="panel-grid row">
             <div class="col-md-12 panel-grid-cell">
 
-                <div class="map" id="map_canvas" data-latitude="46.0661174" data-longitude="14.5320991" data-pin-img="assets/images/pin.png">
+                <div class="map" id="map_canvas" 
+                     data-latitude="@Model.Adress.Latitude" 
+                     data-longitude="@Model.Adress.LongiTude" 
+                     data-pin-img="../../Images/Icons/mapsflag-ylw-lg.png">
                 </div>
 
             </div>
@@ -34,13 +38,13 @@
                 ============================ -->
 
                 <div class="textwidget">
-                    <h5>MENTALPRESS LTD.</h5>
-                    <p>Jennifer Armstrong, Ph.D
-                        <br>227 Marion Street
-                        <br>Columbia, SC 29201</p>
-                    <p>1-888-123-4567
-                        <br>1-888-123-4568
-                        <br><a href="mailto:info@mentalpress.com">info@mentalpress.com</a></p>
+                    <h5>@Model.Adress.Name</h5>
+                    <p>@Model.Adress.Place
+                        <br>@Model.Adress.Street @Model.Adress.Number
+                        <br>@Model.Adress.Town, @Model.Adress.City</p>
+                    <p><i class="fa fa-phone fa-lg"></i>&nbsp;@Model.Phone
+                        <br />
+                        <br><a href="mailto:@(@Model.Mail)">@Model.Mail</a></p>
                 </div>
 
             </div>
@@ -72,30 +76,21 @@
                                     <div class="c-form-group">
                                         <textarea id="messageText" cols="40" rows="10" class="form-textarea" required="required" placeholder="Mesaj"></textarea>
                                     </div>
-
                                     <input type="button" value="Gönder" id="contact-btn" class="form-submit btn btn-primary">
                                 </div>
-
                                 <!-- // end .js-contact-result -->
-
                             </div>
                             <br/>
                             <div class="alert" id="validation" hidden>
                                 <span>Show span</span>
                             </div>
-
                         </form>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </article>
-
 </div>
-
 
 @section scripts
 {
