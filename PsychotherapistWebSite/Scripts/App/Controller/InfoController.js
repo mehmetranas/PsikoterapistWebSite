@@ -7,6 +7,7 @@
                     personName: $("#js-name").val(),
                     personTitle: $("#js-title").val(),
                     adressId: $("#js-adressId").val(),
+                    mail: $("#js-mail").val(),
                     phone: $("#js-phone").val(),
                     facebookUrl: $("#js-facebook").val(),
                     youtubeUrl: $("#js-youtube").val(),

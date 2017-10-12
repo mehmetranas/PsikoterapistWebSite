@@ -40,7 +40,7 @@ namespace PsychotherapistWebSite.Controllers
 
         public ActionResult Contact()
         {
-            var info = _unitOfWork.Info.GetInfoForContact();
+            var info = _unitOfWork.Info.GetInfo();
             return View(info);
         }
     }

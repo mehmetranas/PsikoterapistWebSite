@@ -22,7 +22,8 @@ namespace PsychotherapistWebSite.App_Start
             CreateMap<Info, Info>();
             CreateMap<Adress, Adress>();
             CreateMap<InfoDto, Info>();
-            CreateMap<MessageDto, Message>();
+            CreateMap<MessageDto, Messages>();
+            CreateMap<Messages, MessageDto>();
         }
     }
 }

@@ -1,0 +1,83 @@
+﻿@model IEnumerable<PsychotherapistWebSite.Core.Models.Messages>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Mesajlar</h2>
+
+<table id="message-table" class="display table" cellspacing="0" width="100%">
+    <thead>
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+
+@foreach (var item in Model) {
+    <tbody>
+    <tr class="@(@item.IsRead ? "" : "active")">
+        <td>
+            <span class="fa fa-lg @(@item.IsRead ? "fa-envelope-open-o" : "fa-envelope-o")"></span> 
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+           @Html.ActionLink("Oku", "Details", new {id = item.Id})
+            <button type="button" class="btn btn-link btn-sm fa fa-trash fa-lg js-btn-delete" id="@item.Id">
+                Sil
+            </button>
+        </td>
+    </tr>
+    </tbody>
+}
+</table>
+
+@section scripts{
+    <script>
+        $("#message-table").dataTable({
+            "language":{
+                "sDecimal":        ",",
+                "sEmptyTable":     "Tabloda herhangi bir veri mevcut değil",
+                "sInfo":           "_TOTAL_ kayıttan _START_ - _END_ arasındaki kayıtlar gösteriliyor",
+                "sInfoEmpty":      "Kayıt yok",
+                "sInfoFiltered":   "(_MAX_ kayıt içerisinden bulunan)",
+                "sInfoPostFix":    "",
+                "sInfoThousands":  ".",
+                "sLengthMenu":     "Sayfada _MENU_ kayıt göster",
+                "sLoadingRecords": "Yükleniyor...",
+                "sProcessing":     "İşleniyor...",
+                "sSearch":         "Ara:",
+                "sZeroRecords":    "Eşleşen kayıt bulunamadı",
+                "oPaginate": {
+                    "sFirst":    "İlk",
+                    "sLast":     "Son",
+                    "sNext":     "Sonraki",
+                    "sPrevious": "Önceki"
+                },
+                "oAria": {
+                    "sSortAscending":  ": artan sütun sıralamasını aktifleştir",
+                    "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+                }
+            }
+        });
+        MessageController.delete();
+    </script>
+}

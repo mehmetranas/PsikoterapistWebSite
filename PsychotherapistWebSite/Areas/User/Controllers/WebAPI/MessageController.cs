@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using PsychotherapistWebSite.Areas.User.Dtos;
+﻿using System.Linq;
+using AutoMapper;
+using PsychotherapistWebSite.Core.Dtos;
+using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
+using System.Web.Http;
 
 namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
 {
@@ -18,10 +16,41 @@ namespace PsychotherapistWebSite.Areas.User.Controllers.WebAPI
             _unitOfWork = unitOfWork;
         }
 
-        public IHttpActionResult Add(MessageDto messageDto)
+        [HttpPost]
+        public IHttpActionResult Create(MessageDto messageDto)
         {
-            
+            var message = Mapper.Map<MessageDto, Messages>(messageDto);
+            _unitOfWork.Message.Add(message);
+            _unitOfWork.Complete();
+            return Ok();
         }
+
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
+        {
+            _unitOfWork.Message.Delete(id);
+            _unitOfWork.Complete();
+            return Ok();
+        }
+
+        [HttpPost]
+        public IHttpActionResult Read(int id)
+        {
+            var message = _unitOfWork.Message.GetMessage(id);
+            message.Read();
+            _unitOfWork.Complete();
+
+            return Ok();
+        }
+
+        [HttpGet]
+        public int GetUnreadMessageCount()
+        {
+            var result = _unitOfWork.Message.UnReadMessage().Count();
+            return result;
+        }
+
+
 
     }
 }

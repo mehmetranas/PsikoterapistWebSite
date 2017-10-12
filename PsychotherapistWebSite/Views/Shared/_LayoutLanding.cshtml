@@ -17,6 +17,7 @@
     <!-- Page Title -->
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/assests/css")
+    @Styles.Render("~/lib/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/css")
 
@@ -285,9 +286,9 @@ CONTAINER
 </footer>
 
 @Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
-@Scripts.Render("~/assests/scripts")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/bootstrap") 
+@Scripts.Render("~/assests/scripts") 
 @RenderSection("scripts", required: false)
 
 </body>

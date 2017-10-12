@@ -18,9 +18,8 @@ namespace PsychotherapistWebSite.Models
         public DbSet<Motto> Mottoes { get; set; }
         public DbSet<Image> Images{ get; set; }
         public DbSet<WelcomeText> WelcomeTexts{ get; set; }
-        public DbSet<Message> Messages { get; set; }
-        
-
+        public DbSet<Messages> Messageses { get; set; }
+       
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
