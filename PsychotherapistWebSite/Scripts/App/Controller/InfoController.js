@@ -2,7 +2,7 @@
 
     var save = function () {
         $("input.js-save").on("click",
-            function(e) {
+            function() {
                 var data = {
                     personName: $("#js-name").val(),
                     personTitle: $("#js-title").val(),
@@ -13,6 +13,7 @@
                     youtubeUrl: $("#js-youtube").val(),
                     tweeterUrl: $("#js-tweeter").val(),
                     aboutme: $("#js-aboutme").val(),
+                    mail: $("#js-email").val(),
                     imagesId: [
                         $("#js-image1Id").val(),
                         $("#js-image2Id").val(),

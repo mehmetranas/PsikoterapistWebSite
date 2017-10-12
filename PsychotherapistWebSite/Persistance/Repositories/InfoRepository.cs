@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
+using PsychotherapistWebSite.Core.ViewModels;
 using PsychotherapistWebSite.Models;
 using System.Data.Entity;
 using System.Linq;
@@ -24,6 +23,17 @@ namespace PsychotherapistWebSite.Persistance.Repositories
                 .Include(i =>i.Images)
                 .Include(i => i.Adress)
                 .FirstOrDefault();
+        }
+
+        public ContactViewModel GetInfoForContact()
+        {
+            return _context.Info.Select(i => new ContactViewModel()
+            {
+                Adress = i.Adress,
+                Mail = i.Mail,
+                Phone = i.Phone
+            })
+            .FirstOrDefault();
         }
     
         public void Add(Info info, Image[] images)
