@@ -245,6 +245,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
+    <Compile Include="Controllers\Web API\HomeInfoController.cs" />
+    <Compile Include="Core\Dtos\AdressDto.cs" />
+    <Compile Include="Core\Dtos\HomeInfoDto.cs" />
     <Compile Include="Core\Dtos\MessageDto.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
     <Compile Include="Core\Models\Messages.cs" />
@@ -268,6 +271,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Helper.cs" />
     <Compile Include="Migrations\201709191557266_Initial.cs" />
     <Compile Include="Migrations\201709191557266_Initial.Designer.cs">
       <DependentUpon>201709191557266_Initial.cs</DependentUpon>
@@ -399,6 +403,14 @@
     <Compile Include="Migrations\201710120903108_AddMailPropertyToInfoTable.cs" />
     <Compile Include="Migrations\201710120903108_AddMailPropertyToInfoTable.Designer.cs">
       <DependentUpon>201710120903108_AddMailPropertyToInfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121216289_AddedWorkInfoToWelcomeTextTable.cs" />
+    <Compile Include="Migrations\201710121216289_AddedWorkInfoToWelcomeTextTable.Designer.cs">
+      <DependentUpon>201710121216289_AddedWorkInfoToWelcomeTextTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121226226_ChangeStringLengthForwOrkInfo.cs" />
+    <Compile Include="Migrations\201710121226226_ChangeStringLengthForwOrkInfo.Designer.cs">
+      <DependentUpon>201710121226226_ChangeStringLengthForwOrkInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -1151,7 +1163,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\User\Views\HomeSSS\" />
-    <Folder Include="Controllers\Web API\" />
     <Folder Include="Images\Slide\" />
     <Folder Include="Persistance\Models\" />
   </ItemGroup>
@@ -1269,6 +1280,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710120903108_AddMailPropertyToInfoTable.resx">
       <DependentUpon>201710120903108_AddMailPropertyToInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121216289_AddedWorkInfoToWelcomeTextTable.resx">
+      <DependentUpon>201710121216289_AddedWorkInfoToWelcomeTextTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121226226_ChangeStringLengthForwOrkInfo.resx">
+      <DependentUpon>201710121226226_ChangeStringLengthForwOrkInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

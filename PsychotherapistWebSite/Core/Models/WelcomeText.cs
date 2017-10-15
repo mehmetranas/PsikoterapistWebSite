@@ -14,5 +14,12 @@ namespace PsychotherapistWebSite.Core.Models
         [StringLength(600), Display(Name = "İçerik")]
         public string Content { get; set; }
 
+        [Required]
+        [StringLength(35), Display(Name = "Çalışma Zaman Aralığı")]
+        public string DaysHour { get; set; }
+
+        [Required]
+        [StringLength(35), Display(Name = "Tatil Aralığı Dipnot")]
+        public string NoteForClosedDay { get; set; }
     }
 }
