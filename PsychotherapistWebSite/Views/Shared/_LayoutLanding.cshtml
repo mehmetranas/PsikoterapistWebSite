@@ -30,55 +30,14 @@
 TOP BAR
 ============================ -->
 
-<div class="top">
-    <div class="top__background"></div>
-    <div class="container">
-        <div class="top__tagline"> Aile ve Çocuk Danışmanlığı - Psk.Terapist Semra Tanas</div>
-     </div>
-</div>
-
+@Html.Action("TopBackground","Partials")
 <!-- ========  // END TOP BAR ======== -->
 
 <!-- ============================
 HEADER
 ============================ -->
 
-<div class="container">
-    <header class="header">
-        <div class="logo">
-            <a href="@Url.Action("Index","Home")"> <img src="../../Content/Assests/images/logo.png" alt="MentalPress" srcset="../../Content/Assests/images/logo.png, ../../Content/Assests/images//logo_2x.png 2x" class="img-responsive" width="260" height="90"> </a>
-        </div>
-        <a href="#main-navigation" class="navbar-toggle"> <span class="navbar-toggle__text">MENÜ</span> <span class="navbar-toggle__icon-bar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </span>
-        </a>
-        <div class="header-widgets">
-            <div class="widget  header-widgets__widget  widget-icon-box">
-                <div class="icon-box"><i class="fa  fa-home  fa-3x"></i>
-                    <div class="icon-box__text">
-                        <h4 class="icon-box__title">Kardelen Sokak</h4>
-                        <span class="icon-box__subtitle">G.Osmanpaşa, İstanbul</span></div>
-                </div>
-            </div>
-            <div class="widget  header-widgets__widget  widget-icon-box">
-                <div class="icon-box"><i class="fa  fa-clock-o  fa-3x"></i>
-                    <div class="icon-box__text">
-                        <h4 class="icon-box__title">Pzt - Cmt 9.00 - 19.00</h4>
-                        <span class="icon-box__subtitle">Pazarları Evdeyim</span></div>
-                </div>
-            </div>
-
-            <div class="widget  header-widgets__widget  widget-social-icons">
-                <a class="social-icons__link" href="https://www.facebook.com/web3canvas" target="_blank"><i class="fa  fa-facebook"></i></a>
-                <a class="social-icons__link" href="https://twitter.com/web3canvas" target="_blank"><i class="fa  fa-twitter"></i></a>
-                <a class="social-icons__link" href="https://www.youtube.com/user/surjithctly" target="_blank"><i class="fa  fa-youtube"></i></a>
-            </div>
-
-            <div class="widget  header-widgets__widget  widget_text">
-                <div class="textwidget"><a class="btn  btn-danger  btn-rounded" href="tel:18881234567" target="_self"><i class="fa fa-phone"></i> 90-541-510-3980</a></div>
-            </div>
-        </div>
-    </header>
-</div>
-
+@Html.Action("Top","Partials")
 <!-- ========  // END HEADER ======== -->
 
 <!-- ============================
@@ -180,15 +139,7 @@ CONTAINER
                 <li class="menu-item"><a href="@Url.Action("Contact","Home")">İletişim</a></li>
             </ul> <a class="btn  btn-primary  btn-featured-page" target="_self" href="appointment.html">Soru Sor</a>
         </nav>
-        <div class="widget  widget-about-us">
-            <div id="carousel-people-pw_about_us-2" class="carousel slide" data-ride="carousel" data-interval="false">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active"> <a href="about.html" class="about-us__tag">MSEd, MA, LMHP, CPC</a><img class="about-us__image" src="../../Content/Assests/images/image-51.jpg" alt="About us image">
-                        <h5 class="about-us__name">Semra Tanas, Psikiyatrist</h5>
-                        <p class="about-us__description">I'm a New York based psychologist and I was born and raised in New Jersey. I completed my Masters in Clinical Psychology from Rutgers University, New Jersey in 1987, and have a diploma in Cognitive Psychology and Neurosciences.</p> <a href="about.hmtl" class="read-more  about-us__link">Daha fazlası</a></div>
-                </div>
-            </div>
-        </div>
+     @Html.Action("About","Partials")
         <div class="widget  widget-skype">
             <a class="skype-button" href="skype:echo123"> <i class="fa  fa-skype"></i>
                 <p class="skype-button__title">Skype Araması</p>
@@ -275,7 +226,6 @@ CONTAINER
             </div>
         </div>
     </div>
-    <h1>@Html.HomeData()</h1>
     <div class="footer-bottom">
         <div class="container">
             <div class="footer-bottom__left"> <img src="../../Content/Assests/images/logo_bw.png" alt="Logo Footer"></div>

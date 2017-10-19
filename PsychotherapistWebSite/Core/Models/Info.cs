@@ -45,7 +45,7 @@ namespace PsychotherapistWebSite.Core.Models
         [Required]
         public string AboutMe { get; set; }
 
-        public string TruncateContent => Helper.Helper.TruncateContent(AboutMe, 120);
+        public string TruncateContent => Helper.Helper.TruncateContent(AboutMe, 220);
 
     }
 }

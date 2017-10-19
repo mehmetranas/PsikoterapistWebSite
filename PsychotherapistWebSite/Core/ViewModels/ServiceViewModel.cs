@@ -23,7 +23,7 @@ namespace PsychotherapistWebSite.Core.ViewModels
 
         public Image Image2 => Images.Length > 1 ? Images[1] : null;
 
-        public string TruncateContent => Helper.Helper.TruncateContent(Content, 35);
+        public string TruncateContent => Helper.Helper.TruncateContent(Content, 220);
 
         public IEnumerable<Image> AllImages { get; set; }
 

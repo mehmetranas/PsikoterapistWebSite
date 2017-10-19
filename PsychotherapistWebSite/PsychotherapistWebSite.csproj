@@ -75,6 +75,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -245,6 +246,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
+    <Compile Include="Controllers\PartialsController.cs" />
     <Compile Include="Controllers\Web API\HomeInfoController.cs" />
     <Compile Include="Core\Dtos\AdressDto.cs" />
     <Compile Include="Core\Dtos\HomeInfoDto.cs" />
@@ -267,6 +269,8 @@
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
     <Compile Include="Core\ViewModels\InfoViewModel.cs" />
+    <Compile Include="Core\ViewModels\PartialsViewModels\AboutViewModel.cs" />
+    <Compile Include="Core\ViewModels\PartialsViewModels\TopViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1159,6 +1163,9 @@
     <Content Include="Views\FaqsHome\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Partials\TopBackground.cshtml" />
+    <Content Include="Views\Partials\Top.cshtml" />
+    <Content Include="Views\Partials\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
