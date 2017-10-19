@@ -5,6 +5,8 @@ using PsychotherapistWebSite.Core.ViewModels;
 using PsychotherapistWebSite.Models;
 using System.Data.Entity;
 using System.Linq;
+using PsychotherapistWebSite.Areas.User.Dtos;
+using PsychotherapistWebSite.Core.Dtos;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
 {
@@ -25,17 +27,14 @@ namespace PsychotherapistWebSite.Persistance.Repositories
                 .FirstOrDefault();
         }
 
-        public ContactViewModel GetInfoForContact()
+        public HomeInfoDto GetHomeInfo()
         {
-            return _context.Info.Select(i => new ContactViewModel()
-            {
-                Adress = i.Adress,
-                Mail = i.Mail,
-                Phone = i.Phone
-            })
-            .FirstOrDefault();
+            return _context.Info
+                .Include(i => i.Adress)
+                .Select(Mapper.Map<Info,HomeInfoDto>)
+                .FirstOrDefault();
         }
-    
+
         public void Add(Info info, Image[] images)
         {
             if (info == null) return;

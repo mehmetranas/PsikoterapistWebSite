@@ -75,6 +75,7 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -228,6 +229,7 @@
     <Compile Include="Areas\User\Controllers\FaqsController.cs" />
     <Compile Include="Areas\User\Controllers\HomeFaqController.cs" />
     <Compile Include="Areas\User\Controllers\ImagesController.cs" />
+    <Compile Include="Areas\User\Controllers\MessagesController.cs" />
     <Compile Include="Areas\User\Controllers\MottoController.cs" />
     <Compile Include="Areas\User\Controllers\InfoController.cs" />
     <Compile Include="Areas\User\Controllers\ServiceController.cs" />
@@ -245,8 +247,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Areas\User\Controllers\WebAPI\ServiceController.cs" />
+    <Compile Include="Controllers\PartialsController.cs" />
+    <Compile Include="Controllers\Web API\HomeInfoController.cs" />
+    <Compile Include="Core\Dtos\AdressDto.cs" />
+    <Compile Include="Core\Dtos\HomeInfoDto.cs" />
+    <Compile Include="Core\Dtos\MessageDto.cs" />
     <Compile Include="Core\Dtos\ServiceDto.cs" />
-    <Compile Include="Core\Models\Message.cs" />
+    <Compile Include="Core\Models\Messages.cs" />
     <Compile Include="Core\Models\WelcomeText.cs" />
     <Compile Include="Core\Repositories\IAdressRepository.cs" />
     <Compile Include="Core\Repositories\IFaqRepository.cs" />
@@ -264,10 +271,13 @@
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
     <Compile Include="Core\ViewModels\ImageViewModel.cs" />
     <Compile Include="Core\ViewModels\InfoViewModel.cs" />
+    <Compile Include="Core\ViewModels\PartialsViewModels\AboutViewModel.cs" />
+    <Compile Include="Core\ViewModels\PartialsViewModels\TopViewModel.cs" />
     <Compile Include="Core\ViewModels\SlideViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Helper.cs" />
     <Compile Include="Migrations\201709191557266_Initial.cs" />
     <Compile Include="Migrations\201709191557266_Initial.Designer.cs">
       <DependentUpon>201709191557266_Initial.cs</DependentUpon>
@@ -384,21 +394,29 @@
     <Compile Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.Designer.cs">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.cs" />
-    <Compile Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.Designer.cs">
-      <DependentUpon>201710060929182_AddedMailAttributeToInfoTable.cs</DependentUpon>
+    <Compile Include="Migrations\201710100916508_AddedMessageTable.cs" />
+    <Compile Include="Migrations\201710100916508_AddedMessageTable.Designer.cs">
+      <DependentUpon>201710100916508_AddedMessageTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.cs" />
-    <Compile Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.Designer.cs">
-      <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
+    <Compile Include="Migrations\201710101611072_FixDateTimeAtMessageClass.cs" />
+    <Compile Include="Migrations\201710101611072_FixDateTimeAtMessageClass.Designer.cs">
+      <DependentUpon>201710101611072_FixDateTimeAtMessageClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710061751118_AddedMessageTable.cs" />
-    <Compile Include="Migrations\201710061751118_AddedMessageTable.Designer.cs">
-      <DependentUpon>201710061751118_AddedMessageTable.cs</DependentUpon>
+    <Compile Include="Migrations\201710112032598_AddGeoInfoToAdressTable.cs" />
+    <Compile Include="Migrations\201710112032598_AddGeoInfoToAdressTable.Designer.cs">
+      <DependentUpon>201710112032598_AddGeoInfoToAdressTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.cs" />
-    <Compile Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.Designer.cs">
-      <DependentUpon>201710061758225_AddedIsReadPropertyToMessageTable.cs</DependentUpon>
+    <Compile Include="Migrations\201710120903108_AddMailPropertyToInfoTable.cs" />
+    <Compile Include="Migrations\201710120903108_AddMailPropertyToInfoTable.Designer.cs">
+      <DependentUpon>201710120903108_AddMailPropertyToInfoTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121216289_AddedWorkInfoToWelcomeTextTable.cs" />
+    <Compile Include="Migrations\201710121216289_AddedWorkInfoToWelcomeTextTable.Designer.cs">
+      <DependentUpon>201710121216289_AddedWorkInfoToWelcomeTextTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710121226226_ChangeStringLengthForwOrkInfo.cs" />
+    <Compile Include="Migrations\201710121226226_ChangeStringLengthForwOrkInfo.Designer.cs">
+      <DependentUpon>201710121226226_ChangeStringLengthForwOrkInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Core\Models\AccountViewModels.cs" />
@@ -572,6 +590,7 @@
     <Content Include="Content\Assests\css\woocommerce.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\datatables.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="fonts\Assests\fontawesome-webfont.svg" />
@@ -586,15 +605,23 @@
     <Content Include="html\assets\sass\_About Sass Folder_.txt" />
     <Content Include="Images\Home\books.jpg" />
     <Content Include="Images\Home\faq.jpeg" />
-    <Content Include="Images\icons\flag16x.png" />
-    <Content Include="Images\icons\flag64x.png" />
+    <Content Include="Images\Icons\mapsflag-lg.png" />
+    <Content Include="Images\Icons\mapsflag-ylw-lg.png" />
+    <Content Include="Images\Icons\mapsflag.png" />
     <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\appHome.js" />
     <Content Include="Scripts\App\Controller\BootboxController.js" />
+    <Content Include="Scripts\App\Controller\ContactController.js" />
     <Content Include="Scripts\App\Controller\HomeFaqController.js" />
     <Content Include="Scripts\App\Controller\InfoController.js" />
+    <Content Include="Scripts\App\Controller\MapController.js" />
+    <Content Include="Scripts\App\Controller\MessageController.js" />
     <Content Include="Scripts\App\Controller\ServiceController.js" />
+    <Content Include="Scripts\App\Service\ContactService.js" />
     <Content Include="Scripts\App\Service\HomeFaqService.js" />
     <Content Include="Scripts\App\Service\InfoService.js" />
+    <Content Include="Scripts\App\Service\MapService.js" />
+    <Content Include="Scripts\App\Service\MessageService.js" />
     <Content Include="Scripts\App\Service\ServiceService.js" />
     <Content Include="Scripts\Assests\appointment.js" />
     <Content Include="Scripts\Assests\contact_form.js" />
@@ -1084,15 +1111,19 @@
     <Content Include="Areas\User\Views\Info\Edit.cshtml" />
     <Content Include="Areas\User\Views\Info\Details.cshtml" />
     <Content Include="Areas\User\Views\Info\Delete.cshtml" />
+    <Content Include="Areas\User\Views\Messages\Details.cshtml" />
+    <Content Include="Areas\User\Views\Messages\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datatables.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.maskedinput.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.override.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -1135,11 +1166,13 @@
     <Content Include="Views\FaqsHome\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Partials\TopBackground.cshtml" />
+    <Content Include="Views\Partials\Top.cshtml" />
+    <Content Include="Views\Partials\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\User\Views\HomeSSS\" />
-    <Folder Include="Controllers\Web API\" />
     <Folder Include="Images\Slide\" />
     <Folder Include="Persistance\Models\" />
   </ItemGroup>
@@ -1246,17 +1279,23 @@
     <EmbeddedResource Include="Migrations\201710021237039_AddedImageArrayToInfoCLass.resx">
       <DependentUpon>201710021237039_AddedImageArrayToInfoCLass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710060929182_AddedMailAttributeToInfoTable.resx">
-      <DependentUpon>201710060929182_AddedMailAttributeToInfoTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710100916508_AddedMessageTable.resx">
+      <DependentUpon>201710100916508_AddedMessageTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710061136410_AddedLatAndLangAttributeToAdressClass.resx">
-      <DependentUpon>201710061136410_AddedLatAndLangAttributeToAdressClass.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710101611072_FixDateTimeAtMessageClass.resx">
+      <DependentUpon>201710101611072_FixDateTimeAtMessageClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710061751118_AddedMessageTable.resx">
-      <DependentUpon>201710061751118_AddedMessageTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710112032598_AddGeoInfoToAdressTable.resx">
+      <DependentUpon>201710112032598_AddGeoInfoToAdressTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710061758225_AddedIsReadPropertyToMessageTable.resx">
-      <DependentUpon>201710061758225_AddedIsReadPropertyToMessageTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710120903108_AddMailPropertyToInfoTable.resx">
+      <DependentUpon>201710120903108_AddMailPropertyToInfoTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121216289_AddedWorkInfoToWelcomeTextTable.resx">
+      <DependentUpon>201710121216289_AddedWorkInfoToWelcomeTextTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710121226226_ChangeStringLengthForwOrkInfo.resx">
+      <DependentUpon>201710121226226_ChangeStringLengthForwOrkInfo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

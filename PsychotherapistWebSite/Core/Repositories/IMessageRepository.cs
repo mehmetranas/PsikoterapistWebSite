@@ -1,14 +1,16 @@
 ﻿using System.Collections.Generic;
 using PsychotherapistWebSite.Core.Models;
+using System.Linq;
 
 namespace PsychotherapistWebSite.Core.Repositories
 {
     public interface IMessageRepository
     {
-        void Add(Message message);
+        void Add(Messages message);
         void Delete(int id);
-        void Read(int id);
-        IEnumerable<Message> GetMessages();
-        Message GetrMessage(int id);
+        IQueryable<Messages> GetMessages();
+        Messages GetMessage(int? id);
+        void Put(Messages messages);
+        IEnumerable<Messages> UnReadMessage();
     }
 }

@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using PsychotherapistWebSite.Core.Models;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using PsychotherapistWebSite.Core.Models;
-using PsychotherapistWebSite.Models;
 
 namespace PsychotherapistWebSite.Core.ViewModels
 {
@@ -25,7 +23,7 @@ namespace PsychotherapistWebSite.Core.ViewModels
 
         public Image Image2 => Images.Length > 1 ? Images[1] : null;
 
-        public string TruncateContent => Content.Length > 35 ? Content.Substring(0, 35) : Content;
+        public string TruncateContent => Helper.Helper.TruncateContent(Content, 220);
 
         public IEnumerable<Image> AllImages { get; set; }
 

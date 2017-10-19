@@ -48,7 +48,7 @@ CONTENT
 
     <article>
         <div class="panel-grid row">
-            <div class="col-md-6 panel-grid-cell">
+            <div class="col-md-12 panel-grid-cell">
                 <div class="so-panel panel-first-child panel-last-child">
                     <h3 class="widget-title">@Model.WelcomeText.Title</h3>
                     <div class="textwidget">
@@ -57,7 +57,7 @@ CONTENT
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            @*<div class="col-md-6">
                 <div class="so-panel panel-first-child widget_featured_page">
                     <div class="page-box  page-box--inline">
                         <a class="page-box__picture" href="depression-treatment.html">
@@ -74,7 +74,7 @@ CONTENT
                         <a class="page-box__picture" href="services/individual-treatment/"><img width="100" height="70" src="/Images/Slide/@Model.Service2.Image1.Url" class="attachment-thumbnail size-thumbnail wp-post-image" alt="Individual Treatment"></a>
                         <div class="page-box__content">
                             <h5 class="page-box__title  text-uppercase"><a href="services/individual-treatment/">@Model.Service2.Name</a></h5>
-                            <p>@Model.Service2.TruncateContent ...</p>
+                            <p>@Model.Service2.TruncateContent...</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@ CONTENT
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>*@
         </div>
 
         <!-- ============================
@@ -115,44 +115,23 @@ CONTENT
         ============================ -->
 
         <div class="panel-grid row">
-            <div class="col-md-4">
-                <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-0-0">
-                    <div class="page-box  page-box--block">
-                        <a class="page-box__picture" href="couples-therapy.html"><img width="360" height="240" src="../../content/assests/images/image-21-360x240.jpg" class="attachment-page-box size-page-box wp-post-image" alt="Couples Therapy"></a>
-                        <div class="page-box__content">
-                            <h5 class="page-box__title  text-uppercase"><a href="couples-therapy.html">Couples Therapy</a></h5>
-                            <p>A relationship goes through numerous phases during its life cycle, and it is obvious for it to have a few rough patches. However, the strength of a relationship is reflected in how the couples deal with those ...</p>
-                            <p>
-                                <a href="couples-therapy.html" class="read-more  read-more--page-box">Read more</a>
-                            </p>
+            @foreach (var service in @Model.ServiceViewModels)
+            {
+                <div class="col-md-4">
+                    <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-0-0">
+                        <div class="page-box  page-box--block">
+                            <a class="page-box__picture" href=""><img width="360" height="240" src="../../Images/Slide/@service.Image1.Url" class="attachment-page-box size-page-box wp-post-image" alt="@service.Name"></a>
+                            <div class="page-box__content">
+                                <h5 class="page-box__title  text-uppercase"><a href="couples-therapy.html">Couples Therapy</a></h5>
+                                <p> @service.TruncateContent...</p>
+                                <p>
+                                    <a href="couples-therapy.html" class="read-more  read-more--page-box">Read more</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-1-0">
-                    <div class="page-box  page-box--block">
-                        <a class="page-box__picture" href="post-divorce-recovery.html"><img width="360" height="240" src="../../content/assests/images/image-35-360x240.jpg" class="attachment-page-box size-page-box wp-post-image" alt="Post-divorce Recovery"></a>
-                        <div class="page-box__content">
-                            <h5 class="page-box__title  text-uppercase"><a href="post-divorce-recovery.html">Post-divorce Recovery</a></h5>
-                            <p>Our systematic approach towards couple therapy is defined on the lines of enhancing the communication between the partners, and establishing short term and long term goals, where both the partners would be...</p>
-                            <p><a href="post-divorce-recovery.html" class="read-more  read-more--page-box">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="so-panel widget widget_pw_featured_page widget-featured-page panel-first-child panel-last-child" id="panel-6-2-2-0">
-                    <div class="page-box  page-box--block">
-                        <a class="page-box__picture" href="children-therapy.html"><img width="360" height="240" src="../../content/assests/images/image-54-360x240.jpg" class="attachment-page-box size-page-box wp-post-image" alt="Therapy for Children"></a>
-                        <div class="page-box__content">
-                            <h5 class="page-box__title  text-uppercase"><a href="children-therapy.html">Therapy for Children</a></h5>
-                            <p>There are many emotional issues that find a corner in our heart, and refuse to die down. With time, these issues can transform into a sort of emotional tumor that impacts negatively on our daily life, such as lack of...</p>
-                            <p><a href="children-therapy.html" class="read-more  read-more--page-box">Read more</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
         </div>
 
         <!-- ========  // END SERVICES OVERVIEW ======== -->

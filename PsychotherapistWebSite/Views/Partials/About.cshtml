@@ -1,0 +1,11 @@
+﻿@model PsychotherapistWebSite.Core.ViewModels.PartialsViewModels.AboutViewModel
+
+<div class="widget  widget-about-us">
+    <div id="carousel-people-pw_about_us-2" class="carousel slide" data-ride="carousel" data-interval="false">
+        <div class="carousel-inner" role="listbox">
+            <div class="item active"> <img class="about-us__image" src="../../Images/Slide/@Model.PictureUrl" alt="Hakkımda">
+                <h5 class="about-us__name">@Model.PersonName, @Model.PersoneTitle</h5>
+                <p class="about-us__description">@Model.Text...</p> <a href="@Url.Action("About","Home")" class="read-more  about-us__link">Daha fazlası</a></div>
+        </div>
+    </div>
+</div>

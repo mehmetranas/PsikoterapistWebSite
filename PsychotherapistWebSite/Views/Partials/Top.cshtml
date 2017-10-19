@@ -1,0 +1,43 @@
+﻿@model PsychotherapistWebSite.Core.ViewModels.PartialsViewModels.TopViewModel
+
+<div class="container">
+    <header class="header">
+        <div class="logo">
+            <a href="@Url.Action("Index","Home")"> <img src="../../Content/Assests/images/logo.png" alt="MentalPress" srcset="../../Content/Assests/images/logo.png, ../../Content/Assests/images//logo_2x.png 2x" class="img-responsive" width="260" height="90"> </a>
+        </div>
+        <a href="#main-navigation" class="navbar-toggle">
+            <span class="navbar-toggle__text">MENÜ</span> <span class="navbar-toggle__icon-bar"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </span>
+        </a>
+        <div class="header-widgets">
+            <div class="widget  header-widgets__widget  widget-icon-box">
+                <div class="icon-box">
+                    <i class="fa  fa-home  fa-3x"></i>
+                    <div class="icon-box__text">
+                        <h4 class="icon-box__title">@Model.Adress.Street</h4>
+                        <span class="icon-box__subtitle">@Model.Adress.Town , @Model.Adress.City</span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget  header-widgets__widget  widget-icon-box">
+                <div class="icon-box">
+                    <i class="fa  fa-clock-o  fa-3x"></i>
+                    <div class="icon-box__text">
+                        <h4 class="icon-box__title">@Model.WorkDay</h4>
+                        <span class="icon-box__subtitle">@Model.RestDay</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="widget  header-widgets__widget  widget-social-icons">
+                <a class="social-icons__link" href="https://www.facebook.com/web3canvas" target="_blank"><i class="fa  fa-facebook"></i></a>
+                <a class="social-icons__link" href="https://twitter.com/web3canvas" target="_blank"><i class="fa  fa-twitter"></i></a>
+                <a class="social-icons__link" href="https://www.youtube.com/user/surjithctly" target="_blank"><i class="fa  fa-youtube"></i></a>
+            </div>
+
+            <div class="widget  header-widgets__widget  widget_text">
+                <div class="textwidget"><a class="btn  btn-danger  btn-rounded" href="tel:18881234567" target="_self"><i class="fa fa-phone"></i> @Model.Phone</a></div>
+            </div>
+        </div>
+    </header>
+</div>
+

@@ -42,7 +42,10 @@
                                 @Html.ActionLink("Slayt", "Index", "Slide", null, new { @class = "btn btn-link form-control" })
                             </li>
                             <li>
-                                @Html.ActionLink("Giriş Yazısı", "Index", "WelcomeTexts", null, new { @class = "btn btn-link form-control" })
+                                @Html.ActionLink("Giriş Yazısı & Mesai", "Index", "WelcomeTexts", null, new { @class = "btn btn-link form-control" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Çalışma Saatleri", "WorkingDays", "WelcomeTexts", null, new { @class = "btn btn-link form-control" })
                             </li>
                             <li>
                                 @Html.ActionLink("Ana Sayfa SSS", "Index", "HomeFaq", null, new { @class = "btn btn-link form-control" })
@@ -74,11 +77,17 @@
                                 <li>
                                     @Html.ActionLink("Resimler", "Index", "Images", null, new { @class = "btn btn-link form-control text-left" })
                                 </li>
+                                <li>
+                                    @Html.ActionLink("Adresler", "Index", "Adresses", null, new { @class = "btn btn-link form-control text-left" })
+                                </li>
                             </ul>
                         </div>
                     </div>
                     @Html.ActionLink("Kişisel Bilgiler", "Index", "Info", null, new { @class = "form-control" })
                     @Html.ActionLink("Yorumlar", "Index", "Service", null, new { @class = "form-control" })
+                    <a href="@Url.Action("Index","Messages")" class="form-control">Mesajlar
+                        <span class="fa fa-bell pull-right notification" hidden></span>
+                    </a>
                     @Html.ActionLink("SSS", "Index", "Faqs", null, new { @class = "form-control" })
                 </div>
 
@@ -101,5 +110,12 @@
     @Scripts.Render("~/admin/scripts")
     @Scripts.Render("~/lib/scripts")
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            MessageController.getUnreadMessageCount();
+        });
+    </script>
+    
 </body>
 </html>

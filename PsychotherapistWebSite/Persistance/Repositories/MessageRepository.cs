@@ -1,12 +1,13 @@
-﻿using PsychotherapistWebSite.Core.Models;
+﻿using System.Collections.Generic;
+using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
 using PsychotherapistWebSite.Models;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace PsychotherapistWebSite.Persistance.Repositories
 {
-    public class MessageRepository: IMessageRepository  
+    public class MessageRepository : IMessageRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -15,32 +16,40 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             _context = context;
         }
 
-
-        public void Add(Message message)
+        public void Add(Messages message)
         {
-            _context.Messages.Add(message);
+            if(message != null)
+                _context.Messageses.Add(message);
         }
 
         public void Delete(int id)
         {
-            var message = _context.Messages.FirstOrDefault(m => m.Id == id);
-            if (message != null) _context.Messages.Remove(message);
+            var message = _context.Messageses.FirstOrDefault(m => m.Id == id);
+            if (message != null)
+                _context.Messageses.Remove(message);
         }
 
-        public void Read(int id)
+        public IQueryable<Messages> GetMessages()
         {
-            var message = _context.Messages.FirstOrDefault(m => m.Id == id);
-            if (message != null) message.IsRead = true;
+            return _context.Messageses.OrderByDescending(m => m.IsRead);
         }
 
-        public IEnumerable<Message> GetMessages()
+        public Messages GetMessage(int? id)
         {
-            return _context.Messages.ToList();
+            if (id == null) return null;
+            var message = _context.Messageses.FirstOrDefault(m => m.Id == id);
+            return message;
         }
 
-        public Message GetrMessage(int id)
+        public void Put(Messages messages)
         {
-            return _context.Messages.FirstOrDefault(m => m.Id == id);
+            if(messages == null) return;
+            _context.Entry(messages).State = EntityState.Modified;
+        }
+
+        public IEnumerable<Messages> UnReadMessage()
+        {
+            return _context.Messageses.Where(m => m.IsRead == false);
         }
     }
 }

@@ -17,8 +17,10 @@ namespace PsychotherapistWebSite
 
             bundles.Add(new ScriptBundle("~/assests/scripts")
                 .Include("~/Scripts/Assests/picturefill.min.js",
+                         "~/Scripts/App/Controller/ContactController.js",
+                         "~/Scripts/App/Service/ContactService.js",
                          "~/Scripts/Assests/magnific-popup.js",
-                         "~/Scripts/Assests/google-map.js",
+                         "~/Scripts/App/appHome.js",
                          "~/Scripts/Assests/main.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -31,15 +33,20 @@ namespace PsychotherapistWebSite
                       "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/lib/scripts")
-                .Include("~/Scripts/bootbox.min.js"));
+                .Include("~/Scripts/bootbox.min.js",
+                         "~/Scripts/datatables.min.js"));
 
             bundles.Add(new ScriptBundle("~/admin/scripts")
                 .Include("~/Scripts/App/app.js",
                 "~/Scripts/App/Controller/ServiceController.js",
                 "~/Scripts/App/Controller/BootboxController.js",
                 "~/Scripts/App/Service/ServiceService.js",
+                "~/Scripts/App/Service/MessageService.js",
                 "~/Scripts/App/Service/InfoService.js",
+                "~/Scripts/App/Service/MapService.js",
+                "~/Scripts/App/Controller/MapController.js",
                 "~/Scripts/App/Controller/InfoController.js",
+                "~/Scripts/App/Controller/MessageController.js",
                 "~/Scripts/App/Controller/HomeFaqController.js",
                 "~/Scripts/App/Service/HomeFaqService.js"));
 
@@ -52,6 +59,7 @@ namespace PsychotherapistWebSite
 
             bundles.Add(new StyleBundle("~/lib/css")
                 .Include("~/Content/animate.css",
+                "~/Content/datatables.css",
                 "~/Content/font-awesome.css"));
 
             bundles.Add(new StyleBundle("~/bootstrap/css")

@@ -15,6 +15,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
         public IFaqRepository Faq { get; }
         public IInfoRepository Info { get; set; }
         public IAdressRepository Adress { get; set; }
+        public IMessageRepository Message { get; set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -27,6 +28,7 @@ namespace PsychotherapistWebSite.Persistance.Repositories
             Faq = new FaqRepository(_context);
             Info = new InfoRepository(_context);
             Adress = new AdressRepository(_context);
+            Message = new MessageRepository(_context);
         }
 
         public void Complete()

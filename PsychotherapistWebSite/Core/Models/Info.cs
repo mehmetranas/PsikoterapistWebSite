@@ -30,7 +30,7 @@ namespace PsychotherapistWebSite.Core.Models
         public Adress Adress { get; set; }
 
         [Display(Name = "Mail")]
-        [EmailAddress(ErrorMessage = "Geçersiz Mail Adresi")]
+        [EmailAddress]
         public string Mail { get; set; }
 
         [Display(Name = "Facebook Adresiniz")]
@@ -45,6 +45,8 @@ namespace PsychotherapistWebSite.Core.Models
         [Display(Name = "Hakkımda Yazısı")]
         [Required]
         public string AboutMe { get; set; }
+
+        public string TruncateContent => Helper.Helper.TruncateContent(AboutMe, 220);
 
     }
 }

@@ -18,13 +18,14 @@ namespace PsychotherapistWebSite.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var services = _unitOfWork.Service.GetServices().Take(3).Select(Mapper.Map<ServiceViewModel>).ToArray();
+            //var services = _unitOfWork.Service.GetServices().Take(3).Select(Mapper.Map<ServiceViewModel>).ToArray();
+            var services = _unitOfWork.Service.GetServices().Take(3).Select(Mapper.Map<Service,ServiceViewModel>);
             var slides = _unitOfWork.Slide.GetSlides();
             var welcomeText = _unitOfWork.WelcomeText.GetWelcomeText();
             var faqs = _unitOfWork.Faq.GetFaqsForHomePag().Select(Mapper.Map<Faq,FaqViewModel>);
             var viewModel = new HomeViewModel()
             {
-                Services = services,
+                ServiceViewModels = services,
                 Slides =  slides,
                 WelcomeText = welcomeText,
                 FaqViewModels = faqs
@@ -40,7 +41,7 @@ namespace PsychotherapistWebSite.Controllers
 
         public ActionResult Contact()
         {
-            var info = _unitOfWork.Info.GetInfoForContact();
+            var info = _unitOfWork.Info.GetInfo();
             return View(info);
         }
     }

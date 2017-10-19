@@ -1,0 +1,62 @@
+﻿@model PsychotherapistWebSite.Core.Models.Messages
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/User/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.HiddenFor(model => model.Id);
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MessageText)
+        </dd>
+    </dl>
+</div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", "Messages", new {id = Model.Id})">
+            <i class="fa fa-trash fa-lg"></i>
+        </a>
+        @Html.ActionLink("Geri", "Index")
+    </div>
+}
+
+@section scripts{
+    <script>
+        $(document).ready(function() {
+            MessageController.read(@Model.Id);
+        });
+    </script>
+}

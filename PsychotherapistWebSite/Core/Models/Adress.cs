@@ -22,8 +22,10 @@ namespace PsychotherapistWebSite.Core.Models
         [Required]
         public string City { get; set; }
         [Display(Name = "Enlem")]
+        [Required]
         public string Latitude { get; set; }
         [Display(Name = "Boylam")]
-        public string Longitude { get; set; }
+        [Required]
+        public string LongiTude { get; set; }
     }
 }
