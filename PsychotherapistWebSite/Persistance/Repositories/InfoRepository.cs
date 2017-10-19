@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using PsychotherapistWebSite.Core.Models;
 using PsychotherapistWebSite.Core.Repositories;
+using PsychotherapistWebSite.Core.ViewModels;
 using PsychotherapistWebSite.Models;
 using System.Data.Entity;
 using System.Linq;
@@ -27,7 +26,6 @@ namespace PsychotherapistWebSite.Persistance.Repositories
                 .Include(i => i.Adress)
                 .FirstOrDefault();
         }
-
 
         public HomeInfoDto GetHomeInfo()
         {

@@ -20,7 +20,6 @@ namespace PsychotherapistWebSite.Models
         public DbSet<WelcomeText> WelcomeTexts{ get; set; }
         public DbSet<Messages> Messageses { get; set; }
         
-
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -45,7 +44,6 @@ namespace PsychotherapistWebSite.Models
             modelBuilder.Entity<Info>()
                 .HasMany(i => i.Images)
                 .WithMany();
-
 
             base.OnModelCreating(modelBuilder);
         }

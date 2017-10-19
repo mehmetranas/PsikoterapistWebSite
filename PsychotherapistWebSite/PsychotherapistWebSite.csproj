@@ -239,6 +239,7 @@
     <Compile Include="Areas\User\Controllers\WebAPI\MessageController.cs" />
     <Compile Include="Areas\User\Controllers\WelcomeTextsController.cs" />
     <Compile Include="Areas\User\Dtos\InfoDto.cs" />
+    <Compile Include="Areas\User\Dtos\MessageDto.cs" />
     <Compile Include="Areas\User\Models\ActionType.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Areas\User\Controllers\AdminController.cs" />
@@ -264,6 +265,7 @@
     <Compile Include="Core\Repositories\ISlideRepsitory.cs" />
     <Compile Include="Core\Repositories\IUnitOfWork.cs" />
     <Compile Include="Core\Repositories\IWelcomeTextRepository.cs" />
+    <Compile Include="Core\ViewModels\ContactViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqsHomeViewModel.cs" />
     <Compile Include="Core\ViewModels\FaqViewModel.cs" />
     <Compile Include="Core\ViewModels\HomeViewModel.cs" />
@@ -1118,6 +1120,7 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.maskedinput.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.override.js" />

@@ -23,9 +23,10 @@ namespace PsychotherapistWebSite.Core.Models
         [Display(Name = "Telefon")]
         public string Phone { get; set; }
 
+        [Display(Name = "Adres")]
         public int AdressId { get; set; }
 
-        [Display(Name = "Adress")]
+        [Display(Name = "Adres")]
         public Adress Adress { get; set; }
 
         [Display(Name = "Mail")]
